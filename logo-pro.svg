@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 140" role="img" aria-labelledby="title desc">
+  <title id="title">AQUA-R-WEB</title>
+  <desc id="desc">Logo AQUA-R-WEB, création web et référencement en Moselle</desc>
+  <defs>
+    <linearGradient id="bg" x1="16" y1="8" x2="112" y2="126" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0B3A2C"/>
+      <stop offset="1" stop-color="#04140F"/>
+    </linearGradient>
+    <linearGradient id="emerald" x1="18" y1="24" x2="110" y2="106" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#5AFFC8"/>
+      <stop offset=".48" stop-color="#10E0A0"/>
+      <stop offset="1" stop-color="#0BA77A"/>
+    </linearGradient>
+  </defs>
+  <g transform="translate(5 5)">
+    <rect width="130" height="130" rx="34" fill="url(#bg)"/>
+    <rect x="1" y="1" width="128" height="128" rx="33" fill="none" stroke="#10E0A0" stroke-width="2" opacity=".45"/>
+    <path d="M51 31 21 61l30 30 9-10-20-20 20-20-9-10Z" fill="url(#emerald)"/>
+    <path d="m79 31 30 30-30 30-9-10 20-20-20-20 9-10Z" fill="url(#emerald)"/>
+    <path d="M48 46h12l5 25 6-17h8l6-8h12L83 82H71l-6-15-6 15H47L38 46h10Z" fill="#F1FBF7"/>
+    <rect x="106" y="18" width="8" height="8" rx="2.5" fill="#F5A623"/>
+  </g>
+  <g font-family="Archivo, Inter, 'Segoe UI', Arial, sans-serif">
+    <text x="163" y="70" font-size="47" font-weight="900" letter-spacing=".8" fill="#F1FBF7">AQUA<tspan fill="#9CCCB9">-R-</tspan><tspan fill="#10E0A0">WEB</tspan></text>
+    <rect x="165" y="86" width="46" height="4" rx="2" fill="#10E0A0"/>
+    <text x="164" y="113" font-size="14" font-weight="700" letter-spacing="3.1" fill="#9CCCB9">CRÉATION WEB • SEO • MOSELLE</text>
+  </g>
+</svg>
