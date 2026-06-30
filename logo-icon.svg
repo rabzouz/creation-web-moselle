@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 110 110" role="img" aria-label="AQUA-R-WEB">
+  <defs>
+    <linearGradient id="emg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#10E0A0"/>
+      <stop offset="1" stop-color="#0BA77A"/>
+    </linearGradient>
+  </defs>
+  <rect x="5" y="5" width="100" height="100" rx="27" fill="#04140F"/>
+  <rect x="5" y="5" width="100" height="100" rx="27" fill="none" stroke="url(#emg)" stroke-width="2.5" opacity="0.55"/>
+  <path d="M45 38 L28 55 L45 72" fill="none" stroke="url(#emg)" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M65 38 L82 55 L65 72" fill="none" stroke="url(#emg)" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M50 44 L54 67 L55 56 L56 67 L60 44" fill="none" stroke="#F1FBF7" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
