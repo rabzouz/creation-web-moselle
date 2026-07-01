@@ -11,6 +11,46 @@
   var panel = null;
   var manageButton = null;
   var previousFocus = null;
+  var language = (document.documentElement.lang || "fr").toLowerCase().split("-")[0];
+  var translations = {
+    fr: {
+      title: "Votre confidentialité, notre priorité",
+      intro: "Nous mémorisons votre choix pour assurer le bon fonctionnement du site. Avec votre accord, une mesure d’audience respectueuse de la vie privée pourra être activée.",
+      note: "Aucun cookie publicitaire n’est utilisé.", customize: "Personnaliser", reject: "Refuser les optionnels", accept: "Tout accepter",
+      settings: "Préférences de confidentialité", settingsIntro: "Vous gardez le contrôle. Les fonctions essentielles restent actives afin de mémoriser votre choix.",
+      necessary: "Fonctionnement nécessaire", necessaryText: "Mémorise uniquement votre préférence de confidentialité sur cet appareil.", always: "Toujours actif",
+      analytics: "Mesure d’audience", analyticsText: "Autorise uniquement les outils statistiques déclarés dans cette catégorie. Aucun outil publicitaire n’est concerné.", analyticsLabel: "Autoriser la mesure d’audience",
+      back: "Retour", save: "Enregistrer mes choix", manage: "Gérer mes cookies"
+    },
+    de: {
+      title: "Ihre Privatsphäre hat Priorität",
+      intro: "Wir speichern Ihre Auswahl, damit die Website ordnungsgemäß funktioniert. Mit Ihrer Zustimmung kann eine datenschutzfreundliche Reichweitenmessung aktiviert werden.",
+      note: "Es werden keine Werbe-Cookies verwendet.", customize: "Einstellungen", reject: "Optionale ablehnen", accept: "Alle akzeptieren",
+      settings: "Datenschutzeinstellungen", settingsIntro: "Sie behalten die Kontrolle. Erforderliche Funktionen bleiben aktiv, um Ihre Auswahl zu speichern.",
+      necessary: "Erforderliche Funktionen", necessaryText: "Speichert ausschließlich Ihre Datenschutzauswahl auf diesem Gerät.", always: "Immer aktiv",
+      analytics: "Reichweitenmessung", analyticsText: "Erlaubt nur die in dieser Kategorie angegebenen Statistikwerkzeuge. Werbewerkzeuge sind nicht enthalten.", analyticsLabel: "Reichweitenmessung erlauben",
+      back: "Zurück", save: "Auswahl speichern", manage: "Cookie-Einstellungen"
+    },
+    en: {
+      title: "Your privacy comes first",
+      intro: "We remember your choice so the website can work properly. With your permission, privacy-friendly audience measurement may be enabled.",
+      note: "No advertising cookies are used.", customize: "Customise", reject: "Reject optional", accept: "Accept all",
+      settings: "Privacy settings", settingsIntro: "You remain in control. Essential functions stay active to remember your choice.",
+      necessary: "Essential operation", necessaryText: "Only remembers your privacy preference on this device.", always: "Always active",
+      analytics: "Audience measurement", analyticsText: "Only allows analytics tools declared in this category. No advertising tools are included.", analyticsLabel: "Allow audience measurement",
+      back: "Back", save: "Save my choices", manage: "Manage cookies"
+    },
+    lb: {
+      title: "Är Privatsphär huet Prioritéit",
+      intro: "Mir späicheren Är Auswiel, fir datt d’Websäit richteg funktionéiert. Mat Ärer Zoustëmmung kann eng dateschutzfrëndlech Statistikanalys aktivéiert ginn.",
+      note: "Et gi keng Reklamm-Cookie benotzt.", customize: "Upassen", reject: "Optional refuséieren", accept: "Alles akzeptéieren",
+      settings: "Dateschutzastellungen", settingsIntro: "Dir behält d’Kontroll. Déi néideg Funktioune bleiwen aktiv, fir Är Auswiel ze späicheren.",
+      necessary: "Néideg Funktiounen", necessaryText: "Späichert nëmmen Är Dateschutzauswiel op dësem Apparat.", always: "Ëmmer aktiv",
+      analytics: "Statistikanalys", analyticsText: "Erlaabt nëmmen déi Statistik-Tools, déi an dëser Kategorie uginn sinn. Keng Reklamm-Tools sinn dobäi.", analyticsLabel: "Statistikanalys erlaben",
+      back: "Zréck", save: "Auswiel späicheren", manage: "Cookie verwalten"
+    }
+  };
+  var copy = translations[language] || translations.fr;
 
   function readConsent() {
     try {
@@ -158,15 +198,15 @@
       '<div class="aq-cookie-content">' +
         '<div class="aq-cookie-icon">' + shieldIcon() + '</div>' +
         '<div class="aq-cookie-copy">' +
-          '<h2 id="aq-cookie-title">Votre confidentialité, notre priorité</h2>' +
-          '<p>Nous mémorisons votre choix pour assurer le bon fonctionnement du site. Avec votre accord, une mesure d’audience respectueuse de la vie privée pourra être activée.</p>' +
-          '<span class="aq-cookie-note">Aucun cookie publicitaire n’est utilisé.</span>' +
+          '<h2 id="aq-cookie-title">' + copy.title + '</h2>' +
+          '<p>' + copy.intro + '</p>' +
+          '<span class="aq-cookie-note">' + copy.note + '</span>' +
         '</div>' +
       '</div>' +
       '<div class="aq-cookie-actions">' +
-        '<button class="aq-cookie-btn aq-cookie-link" type="button" data-aq-action="preferences">Personnaliser</button>' +
-        '<button class="aq-cookie-btn" type="button" data-aq-action="reject">Refuser les optionnels</button>' +
-        '<button class="aq-cookie-btn aq-cookie-primary" type="button" data-aq-action="accept">Tout accepter</button>' +
+        '<button class="aq-cookie-btn aq-cookie-link" type="button" data-aq-action="preferences">' + copy.customize + '</button>' +
+        '<button class="aq-cookie-btn" type="button" data-aq-action="reject">' + copy.reject + '</button>' +
+        '<button class="aq-cookie-btn aq-cookie-primary" type="button" data-aq-action="accept">' + copy.accept + '</button>' +
       '</div>';
     hideManageButton();
     showPanel();
@@ -180,19 +220,19 @@
       '<div class="aq-cookie-preferences">' +
         '<div class="aq-cookie-heading-row">' +
           '<div class="aq-cookie-icon">' + shieldIcon() + '</div>' +
-          '<div><h2 id="aq-cookie-settings-title">Préférences de confidentialité</h2><p>Vous gardez le contrôle. Les fonctions essentielles restent actives afin de mémoriser votre choix.</p></div>' +
+          '<div><h2 id="aq-cookie-settings-title">' + copy.settings + '</h2><p>' + copy.settingsIntro + '</p></div>' +
         '</div>' +
         '<div class="aq-cookie-category">' +
-          '<div><h3>Fonctionnement nécessaire</h3><p>Mémorise uniquement votre préférence de confidentialité sur cet appareil.</p></div>' +
-          '<span class="aq-cookie-required">Toujours actif</span>' +
+          '<div><h3>' + copy.necessary + '</h3><p>' + copy.necessaryText + '</p></div>' +
+          '<span class="aq-cookie-required">' + copy.always + '</span>' +
         '</div>' +
         '<div class="aq-cookie-category">' +
-          '<div><h3>Mesure d’audience</h3><p>Autorise uniquement les outils statistiques déclarés dans cette catégorie. Aucun outil publicitaire n’est concerné.</p></div>' +
-          '<button class="aq-cookie-switch" type="button" role="switch" aria-label="Autoriser la mesure d’audience" aria-checked="' + (analyticsAllowed ? "true" : "false") + '" data-aq-action="toggle-analytics"></button>' +
+          '<div><h3>' + copy.analytics + '</h3><p>' + copy.analyticsText + '</p></div>' +
+          '<button class="aq-cookie-switch" type="button" role="switch" aria-label="' + copy.analyticsLabel + '" aria-checked="' + (analyticsAllowed ? "true" : "false") + '" data-aq-action="toggle-analytics"></button>' +
         '</div>' +
         '<div class="aq-cookie-pref-actions">' +
-          '<button class="aq-cookie-btn" type="button" data-aq-action="cancel">Retour</button>' +
-          '<button class="aq-cookie-btn aq-cookie-primary" type="button" data-aq-action="save">Enregistrer mes choix</button>' +
+          '<button class="aq-cookie-btn" type="button" data-aq-action="cancel">' + copy.back + '</button>' +
+          '<button class="aq-cookie-btn aq-cookie-primary" type="button" data-aq-action="save">' + copy.save + '</button>' +
         '</div>' +
       '</div>';
     hideManageButton();
@@ -231,7 +271,7 @@
     manageButton = document.createElement("button");
     manageButton.className = "aq-cookie-manage";
     manageButton.type = "button";
-    manageButton.innerHTML = shieldIcon() + "<span>Gérer mes cookies</span>";
+    manageButton.innerHTML = shieldIcon() + "<span>" + copy.manage + "</span>";
     manageButton.addEventListener("click", renderPreferences);
 
     panel.addEventListener("click", handleClick);
