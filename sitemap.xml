@@ -1,96 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://creation-web-moselle.fr/</loc>
-    <lastmod>2026-07-01</lastmod>
+    <lastmod>2026-06-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://creation-web-moselle.fr/creation-site-internet-metz/</loc>
-    <lastmod>2026-07-01</lastmod>
+    <loc>https://creation-web-moselle.fr/#services</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://creation-web-moselle.fr/creation-site-internet-thionville/</loc>
-    <lastmod>2026-07-01</lastmod>
+    <loc>https://creation-web-moselle.fr/#tarifs</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://creation-web-moselle.fr/site-vitrine-moselle/</loc>
-    <lastmod>2026-07-01</lastmod>
+    <loc>https://creation-web-moselle.fr/#faq</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://creation-web-moselle.fr/referencement-seo-moselle/</loc>
-    <lastmod>2026-07-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://creation-web-moselle.fr/prix-site-internet-moselle/</loc>
-    <lastmod>2026-07-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://creation-web-moselle.fr/creation-site-internet-nancy/</loc>
-    <lastmod>2026-07-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://creation-web-moselle.fr/creation-site-internet-luxembourg/</loc>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://creation-web-moselle.fr/creation-site-internet-luxembourg/" />
-    <xhtml:link rel="alternate" hreflang="de" href="https://creation-web-moselle.fr/de/webdesign-luxemburg/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://creation-web-moselle.fr/en/website-design-luxembourg/" />
-    <xhtml:link rel="alternate" hreflang="lb" href="https://creation-web-moselle.fr/lb/websait-letzebuerg/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://creation-web-moselle.fr/creation-site-internet-luxembourg/" />
-    <lastmod>2026-07-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://creation-web-moselle.fr/creation-site-internet-grand-est/</loc>
-    <lastmod>2026-07-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://creation-web-moselle.fr/de/webdesign-luxemburg/</loc>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://creation-web-moselle.fr/creation-site-internet-luxembourg/" />
-    <xhtml:link rel="alternate" hreflang="de" href="https://creation-web-moselle.fr/de/webdesign-luxemburg/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://creation-web-moselle.fr/en/website-design-luxembourg/" />
-    <xhtml:link rel="alternate" hreflang="lb" href="https://creation-web-moselle.fr/lb/websait-letzebuerg/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://creation-web-moselle.fr/creation-site-internet-luxembourg/" />
-    <lastmod>2026-07-01</lastmod>
-    <changefreq>monthly</changefreq>
+    <loc>https://creation-web-moselle.fr/#contact</loc>
+    <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://creation-web-moselle.fr/en/website-design-luxembourg/</loc>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://creation-web-moselle.fr/creation-site-internet-luxembourg/" />
-    <xhtml:link rel="alternate" hreflang="de" href="https://creation-web-moselle.fr/de/webdesign-luxemburg/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://creation-web-moselle.fr/en/website-design-luxembourg/" />
-    <xhtml:link rel="alternate" hreflang="lb" href="https://creation-web-moselle.fr/lb/websait-letzebuerg/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://creation-web-moselle.fr/creation-site-internet-luxembourg/" />
+    <loc>https://creation-web-moselle.fr/mentions-legales/</loc>
     <lastmod>2026-07-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <changefreq>yearly</changefreq>
+    <priority>0.2</priority>
   </url>
   <url>
-    <loc>https://creation-web-moselle.fr/lb/websait-letzebuerg/</loc>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://creation-web-moselle.fr/creation-site-internet-luxembourg/" />
-    <xhtml:link rel="alternate" hreflang="de" href="https://creation-web-moselle.fr/de/webdesign-luxemburg/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://creation-web-moselle.fr/en/website-design-luxembourg/" />
-    <xhtml:link rel="alternate" hreflang="lb" href="https://creation-web-moselle.fr/lb/websait-letzebuerg/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://creation-web-moselle.fr/creation-site-internet-luxembourg/" />
+    <loc>https://creation-web-moselle.fr/politique-confidentialite/</loc>
     <lastmod>2026-07-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <changefreq>yearly</changefreq>
+    <priority>0.2</priority>
   </url>
 </urlset>
