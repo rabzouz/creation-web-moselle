@@ -192,6 +192,15 @@ header.scrolled{box-shadow:0 12px 40px rgba(0,0,0,.45)}
 .svc p{color:var(--mist);font-size:.93rem}
 .tags{display:flex;flex-wrap:wrap;gap:.45rem;margin-top:1rem}
 .tags span{font-size:.72rem;font-weight:600;color:var(--emerald);background:var(--emerald-dim);border:1px solid rgba(16,224,160,.25);border-radius:999px;padding:.22rem .7rem}
+.visual-services{background:linear-gradient(180deg,var(--abyss),#06201a 55%,var(--abyss))}
+.visual-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:1.2rem;margin-top:3rem}
+.visual-card{grid-column:span 2;display:block;background:linear-gradient(160deg,var(--hull),var(--deep));border:1px solid var(--line);border-radius:20px;overflow:hidden;box-shadow:0 24px 55px rgba(0,0,0,.38);transition:transform .3s,border-color .3s,box-shadow .3s}
+.visual-card:nth-child(-n+2){grid-column:span 3}
+.visual-card:hover{transform:translateY(-6px);border-color:rgba(16,224,160,.45);box-shadow:0 32px 70px rgba(0,0,0,.5)}
+.visual-card img{width:100%;aspect-ratio:640/349;object-fit:cover}
+.visual-card figcaption{padding:1.15rem 1.2rem 1.3rem}
+.visual-card strong{display:block;font-family:var(--display);font-size:1.05rem;margin-bottom:.3rem}
+.visual-card span{color:var(--mist);font-size:.88rem}
 .showcase-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.4rem;margin-top:3rem}
 .shot{position:relative;border-radius:20px;overflow:hidden;border:1px solid var(--line);box-shadow:0 30px 70px rgba(0,0,0,.45);transition:transform .35s,border-color .35s}
 .shot:hover{transform:translateY(-6px);border-color:rgba(16,224,160,.45)}
@@ -280,6 +289,8 @@ footer{border-top:1px solid var(--line);padding:3.5rem 0 2rem;background:var(--a
   .prices{grid-template-columns:1fr}
   .contact-grid{grid-template-columns:1fr}
   .local-intents{grid-template-columns:1fr}
+  .visual-grid{grid-template-columns:repeat(2,1fr)}
+  .visual-card,.visual-card:nth-child(-n+2){grid-column:span 1}
   .foot-grid{grid-template-columns:1fr 1fr}
   .mobile-menu.open{display:flex;flex-direction:column;gap:.4rem;padding:1rem 0 1.4rem;border-top:1px solid var(--line)}
   .mobile-menu a{color:var(--mist);padding:.7rem 1rem;font-weight:600}
@@ -289,6 +300,7 @@ footer{border-top:1px solid var(--line);padding:3.5rem 0 2rem;background:var(--a
   .hero-stats{grid-template-columns:repeat(2,1fr)}
   .steps{grid-template-columns:1fr}
   .showcase-grid{grid-template-columns:1fr}
+  .visual-grid{grid-template-columns:1fr}
   .foot-grid{grid-template-columns:1fr}
   .partner-strip{flex-direction:column;text-align:center}
 }
@@ -367,6 +379,31 @@ footer{border-top:1px solid var(--line);padding:3.5rem 0 2rem;background:var(--a
       <div class="reveal"><article class="svc"><div class="ic">🎨</div><h3>Logo & identité visuelle</h3><p>Création de votre logo, choix des couleurs et préparation des images pour une image de marque cohérente et professionnelle.</p><div class="tags"><span>Logo</span><span>Branding</span><span>Images</span></div></article></div>
       <div class="reveal"><article class="svc"><div class="ic">🌐</div><h3>Hébergement & nom de domaine</h3><p>Nous hébergeons votre site et vous accompagnons sur le nom de domaine. Aucune manipulation technique de votre côté, tout est géré.</p><div class="tags"><span>Hébergement</span><span>Domaine</span><span>Clé en main</span></div></article></div>
       <div class="reveal"><article class="svc"><div class="ic">⚡</div><h3>Performance & rapidité</h3><p>Site léger et ultra rapide pour un excellent score Google et une expérience visiteur optimale. La vitesse, c'est aussi du référencement.</p><div class="tags"><span>Vitesse</span><span>Core Web Vitals</span><span>Léger</span></div></article></div>
+    </div>
+  </div>
+</section>
+
+<section class="visual-services" aria-labelledby="expertises-visuelles-title">
+  <div class="wrap">
+    <span class="eyebrow reveal">Expertise en images</span>
+    <h2 class="sec-title reveal" id="expertises-visuelles-title">Votre site, maîtrisé de bout en bout</h2>
+    <p class="sec-sub reveal">Performance, hébergement, affichage mobile et suivi SEO : chaque étape est pensée pour obtenir un site fiable, rapide et utile à votre activité.</p>
+    <div class="visual-grid">
+      <a class="visual-card reveal" href="/site-vitrine-moselle/">
+        <figure><img src="performance-site-web.jpg" width="1280" height="698" alt="Analyse des performances et optimisation de la rapidité d'un site internet" loading="lazy" decoding="async"><figcaption><strong>Performance et rapidité</strong><span>Un site léger, mesuré et optimisé avant sa mise en ligne.</span></figcaption></figure>
+      </a>
+      <a class="visual-card reveal" href="/prix-site-internet-moselle/">
+        <figure><img src="hebergement-site-web.jpg" width="1280" height="698" alt="Configuration d'un hébergement sécurisé pour un site professionnel" loading="lazy" decoding="async"><figcaption><strong>Hébergement clé en main</strong><span>Publication, sécurité et disponibilité sans manipulation technique.</span></figcaption></figure>
+      </a>
+      <a class="visual-card reveal" href="/site-vitrine-moselle/">
+        <figure><img src="design-responsive-moselle.jpg" width="1280" height="698" alt="Vérification d'un site responsive sur ordinateur, tablette et smartphone" loading="lazy" decoding="async"><figcaption><strong>Design responsive</strong><span>Une présentation cohérente sur ordinateur, tablette et mobile.</span></figcaption></figure>
+      </a>
+      <a class="visual-card reveal" href="/referencement-seo-moselle/">
+        <figure><img src="suivi-seo-moselle.jpg" width="1280" height="698" alt="Suivi des statistiques de référencement naturel d'un site en Moselle" loading="lazy" decoding="async"><figcaption><strong>Suivi SEO local</strong><span>Des données lisibles pour orienter les prochaines améliorations.</span></figcaption></figure>
+      </a>
+      <a class="visual-card reveal" href="/referencement-seo-moselle/">
+        <figure><img src="performance-seo.jpg" width="1280" height="698" alt="Tableau de bord de croissance du trafic organique et des performances SEO" loading="lazy" decoding="async"><figcaption><strong>Croissance organique</strong><span>Une base technique solide pour développer votre visibilité dans le temps.</span></figcaption></figure>
+      </a>
     </div>
   </div>
 </section>
