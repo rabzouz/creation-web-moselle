@@ -1,44 +1,100 @@
 // Fonction serverless Vercel : reçoit le formulaire /demande-de-projet/ et envoie 2 e-mails via Resend
-// 1) la demande complète à AQUA-R-WEB  2) un accusé de réception automatique au client
+// 1) la fiche de demande complète à AQUA-R-WEB   2) un accusé de réception automatique au client
 // Variables d'environnement Vercel :
 //   RESEND_API_KEY  (obligatoire)  clé API Resend
 //   RESEND_FROM     (conseillé)    ex. "AQUA-R-WEB <contact@creation-web-moselle.fr>" (domaine vérifié chez Resend)
 //   CONTACT_TO      (optionnel)    destinataire des demandes, défaut aquaweb57@gmail.com
 
-const LABELS = {
-  type_demande: 'Type de demande',
-  nom: 'Nom', entreprise: 'Entreprise', email: 'E-mail', telephone: 'Téléphone',
-  ville: 'Ville / zone', secteur: "Secteur d'activité",
-  site_actuel: 'Site actuel', hebergeur_actuel: 'Hébergeur / accès actuel', probleme_actuel: 'Ce qui ne va pas sur le site actuel',
-  formule: 'Formule souhaitée', objectifs: 'Objectifs', pages: 'Pages souhaitées', fonctions: 'Fonctionnalités',
-  logo: 'Logo', couleurs: 'Couleurs / style', inspirations: 'Sites qui plaisent',
-  textes: 'Textes', photos: 'Photos', domaine: 'Nom de domaine', domaine_souhaite: 'Domaine souhaité / actuel',
-  mots_cles: 'Mots-clés visés', delai: 'Délai', budget: 'Budget', message: 'Message',
-  rappel: 'Préférence de contact'
-};
-const ORDER = Object.keys(LABELS);
+const PHONE = '07 87 20 25 94';
+const PHONE_LINK = 'tel:+33787202594';
+const SITE = 'https://creation-web-moselle.fr';
+
+// Fiche organisée en rubriques : [titre, [[champ, libellé], ...]]
+const SECTIONS = [
+  ['👤 Le client', [
+    ['nom', 'Nom et prénom'], ['entreprise', 'Entreprise'], ['email', 'E-mail'],
+    ['telephone', 'Téléphone'], ['rappel', 'Préfère être recontacté'],
+    ['secteur', "Secteur d'activité"], ['ville', 'Ville / zone desservie']
+  ]],
+  ['🎯 Le projet', [
+    ['type_demande', 'Type de demande'], ['formule', 'Formule choisie'],
+    ['objectifs', 'Objectifs'], ['mots_cles', 'Mots-clés visés sur Google']
+  ]],
+  ['🔧 Site actuel à reprendre', [
+    ['site_actuel', 'Adresse du site'], ['hebergeur_actuel', 'Hébergeur / accès'],
+    ['probleme_actuel', 'Problèmes constatés']
+  ]],
+  ['🧩 Contenu du site', [
+    ['pages', 'Pages souhaitées'], ['fonctions', 'Fonctionnalités']
+  ]],
+  ['🎨 Image et contenus', [
+    ['logo', 'Logo'], ['couleurs', 'Couleurs / style'], ['inspirations', 'Sites qui plaisent'],
+    ['textes', 'Textes'], ['photos', 'Photos'],
+    ['domaine', 'Nom de domaine'], ['domaine_souhaite', 'Nom souhaité ou actuel']
+  ]],
+  ['📅 Délai et budget', [
+    ['delai', 'Délai souhaité'], ['budget', 'Budget']
+  ]],
+  ['💬 Message du client', [
+    ['message', '']
+  ]]
+];
+const FIELDS = SECTIONS.flatMap(([, f]) => f.map(([k]) => k));
 
 const esc = (v) => String(v).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
-const clean = (v, max = 2000) => {
-  if (Array.isArray(v)) return v.slice(0, 30).map((x) => String(x).slice(0, 200)).join(', ');
+const clean = (v, max = 500) => {
+  if (Array.isArray(v)) return v.slice(0, 30).map((x) => String(x).trim().slice(0, 200)).filter(Boolean).join(' · ');
   return String(v ?? '').trim().slice(0, max);
 };
 
-function table(data) {
-  const rows = ORDER.filter((k) => data[k]).map((k) =>
-    `<tr><td style="padding:8px 12px;border-bottom:1px solid #e5efe9;color:#4b6b5e;font-weight:600;vertical-align:top;width:38%">${esc(LABELS[k])}</td>` +
-    `<td style="padding:8px 12px;border-bottom:1px solid #e5efe9;color:#0b2a20;white-space:pre-wrap">${esc(data[k])}</td></tr>`).join('');
-  return `<table style="width:100%;border-collapse:collapse;font-family:Arial,sans-serif;font-size:14px">${rows}</table>`;
+// ---------- rendu HTML ----------
+function sectionsHtml(data) {
+  return SECTIONS.map(([title, fields]) => {
+    const rows = fields.filter(([k]) => data[k]);
+    if (!rows.length) return '';
+    const body = rows.map(([k, label]) => label
+      ? `<tr><td style="padding:7px 0;color:#5b7d70;font-size:13px;vertical-align:top;width:40%">${esc(label)}</td>` +
+        `<td style="padding:7px 0;color:#0b2a20;font-size:14px;font-weight:600;white-space:pre-wrap">${esc(data[k])}</td></tr>`
+      : `<tr><td colspan="2" style="padding:7px 0;color:#0b2a20;font-size:14px;line-height:1.6;white-space:pre-wrap">${esc(data[k])}</td></tr>`
+    ).join('');
+    return `<div style="margin:0 0 18px;padding:14px 18px;border:1px solid #d6eee4;border-radius:12px;background:#fbfefd">
+      <div style="font-size:15px;font-weight:800;color:#0b2a20;margin:0 0 6px">${title}</div>
+      <table role="presentation" style="width:100%;border-collapse:collapse;font-family:Arial,sans-serif">${body}</table></div>`;
+  }).join('');
 }
 
-function layout(title, intro, body) {
-  return `<div style="background:#f1fbf7;padding:24px;font-family:Arial,sans-serif">
-  <div style="max-width:640px;margin:auto;background:#fff;border-radius:14px;overflow:hidden;border:1px solid #d6eee4">
-    <div style="background:#04140F;color:#10E0A0;padding:18px 24px;font-size:20px;font-weight:800">AQUA-R-<span style="color:#fff">WEB</span></div>
-    <div style="padding:24px"><h1 style="font-size:20px;color:#0b2a20;margin:0 0 10px">${title}</h1>
-    <p style="color:#33574a;line-height:1.6;margin:0 0 18px">${intro}</p>${body}</div>
-    <div style="padding:16px 24px;background:#f7fcfa;color:#5b7d70;font-size:12px">AQUA-R-WEB · Création de sites internet en Moselle · 07 87 20 25 94 · creation-web-moselle.fr</div>
-  </div></div>`;
+function button(href, label, primary) {
+  return `<a href="${href}" style="display:inline-block;margin:0 8px 10px 0;padding:11px 18px;border-radius:10px;font-weight:700;font-size:14px;text-decoration:none;` +
+    (primary ? 'background:#10E0A0;color:#04140F' : 'background:#ffffff;color:#0b2a20;border:1px solid #b9e3d2') + `">${label}</a>`;
+}
+
+function layout(preheader, title, introHtml, bodyHtml) {
+  return `<!doctype html><html lang="fr"><body style="margin:0;background:#eef8f4">
+  <div style="display:none;max-height:0;overflow:hidden;opacity:0">${esc(preheader)}</div>
+  <div style="padding:24px 12px;font-family:Arial,Helvetica,sans-serif">
+  <div style="max-width:640px;margin:auto;background:#ffffff;border-radius:16px;overflow:hidden;border:1px solid #d6eee4">
+    <div style="background:#04140F;padding:18px 24px;font-size:20px;font-weight:800;color:#10E0A0">AQUA-R-<span style="color:#ffffff">WEB</span>
+      <span style="display:block;font-size:12px;font-weight:400;color:#9cccb9;margin-top:2px">Création de sites internet en Moselle</span></div>
+    <div style="padding:24px">
+      <h1 style="font-size:20px;line-height:1.3;color:#0b2a20;margin:0 0 12px">${title}</h1>
+      <div style="color:#33574a;font-size:15px;line-height:1.6;margin:0 0 20px">${introHtml}</div>
+      ${bodyHtml}
+    </div>
+    <div style="padding:16px 24px;background:#f5fbf8;color:#5b7d70;font-size:12px;line-height:1.6">
+      AQUA-R-WEB, service web d'AQUA-R-FLY · 60 Route d'Ars, 57130 Jussy<br>
+      📞 <a href="${PHONE_LINK}" style="color:#0b7a58">${PHONE}</a> · 🌐 <a href="${SITE}" style="color:#0b7a58">creation-web-moselle.fr</a>
+    </div>
+  </div></div></body></html>`;
+}
+
+// ---------- rendu texte (meilleure délivrabilité) ----------
+function sectionsText(data) {
+  return SECTIONS.map(([title, fields]) => {
+    const rows = fields.filter(([k]) => data[k]);
+    if (!rows.length) return '';
+    return title.replace(/^\S+\s/, '').toUpperCase() + '\n' +
+      rows.map(([k, label]) => (label ? `- ${label} : ` : '') + data[k]).join('\n');
+  }).filter(Boolean).join('\n\n');
 }
 
 async function sendResend(payload) {
@@ -63,40 +119,70 @@ module.exports = async (req, res) => {
   if (body.site_web_confirm) return res.status(200).json({ ok: true });
 
   const data = {};
-  for (const k of ORDER) data[k] = clean(body[k], k === 'message' || k === 'probleme_actuel' ? 4000 : 500);
+  for (const k of FIELDS) data[k] = clean(body[k], k === 'message' ? 4000 : 500);
 
   if (!data.nom || !data.email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email)) {
     return res.status(400).json({ ok: false, error: 'Nom et e-mail valides obligatoires' });
   }
   if (!body.rgpd) return res.status(400).json({ ok: false, error: 'Consentement requis' });
 
+  const isReprise = /reprise|refonte/i.test(data.type_demande);
+  if (!isReprise) { data.site_actuel = ''; data.hebergeur_actuel = ''; data.probleme_actuel = ''; }
+
   const from = process.env.RESEND_FROM || 'AQUA-R-WEB <onboarding@resend.dev>';
   const to = process.env.CONTACT_TO || 'aquaweb57@gmail.com';
-  const type = data.type_demande || 'Demande';
+  const qui = data.entreprise ? `${data.nom} (${data.entreprise})` : data.nom;
+  const typeCourt = isReprise ? 'Reprise / refonte de site' : 'Création de site';
+  const prenom = data.nom.split(/\s+/)[0];
+  const telDigits = data.telephone.replace(/[^\d+]/g, '');
+  const waNum = telDigits.replace(/^\+/, '').replace(/^0/, '33');
+
+  // 1) fiche de demande pour AQUA-R-WEB
+  const actions = [
+    button(`mailto:${encodeURIComponent(data.email)}?subject=${encodeURIComponent('Votre projet de site internet – AQUA-R-WEB')}`, '✉️ Répondre par e-mail', true),
+    telDigits ? button(`tel:${telDigits}`, `📞 Appeler ${esc(prenom)}`) : '',
+    telDigits ? button(`https://wa.me/${waNum}`, '💬 WhatsApp') : ''
+  ].join('');
 
   try {
-    // 1) demande complète pour AQUA-R-WEB
     await sendResend({
       from, to: [to], reply_to: data.email,
-      subject: `🆕 ${type} — ${data.entreprise || data.nom}${data.formule ? ' — ' + data.formule : ''}`,
-      html: layout(`Nouvelle demande : ${esc(type)}`,
-        `Demande reçue depuis le formulaire client de creation-web-moselle.fr. Répondez directement à cet e-mail pour écrire à ${esc(data.nom)}.`,
-        table(data))
+      subject: `Nouvelle demande : ${typeCourt} – ${qui}`,
+      html: layout(
+        `${typeCourt} – ${data.formule || 'formule à définir'} – ${data.ville || ''}`,
+        `📥 Nouvelle demande de ${esc(qui)}`,
+        `<p style="margin:0 0 6px"><strong>${esc(typeCourt)}</strong>${data.formule ? ` · ${esc(data.formule)}` : ''}${data.delai ? ` · ${esc(data.delai)}` : ''}</p>
+         <p style="margin:0 0 14px">Le client attend un retour <strong>sous 24h</strong>${data.rappel ? `, de préférence <strong>${esc(data.rappel.toLowerCase())}</strong>` : ''}.</p>${actions}`,
+        sectionsHtml(data)
+      ),
+      text: `Nouvelle demande de ${qui}\n${typeCourt}${data.formule ? ' – ' + data.formule : ''}\n\n${sectionsText(data)}\n\nRépondez directement à cet e-mail pour écrire au client.`
     });
   } catch (e) {
     console.error(e);
     return res.status(502).json({ ok: false, error: "L'envoi a échoué" });
   }
 
-  // 2) accusé de réception automatique au client (ne bloque pas la réponse en cas d'échec)
+  // 2) accusé de réception automatique au client
   let confirmation = true;
   try {
     await sendResend({
       from, to: [data.email], reply_to: to,
-      subject: 'Votre demande de projet web a bien été reçue — AQUA-R-WEB',
-      html: layout(`Merci ${esc(data.nom)}, votre demande est bien arrivée ✅`,
-        `Nous étudions votre projet et revenons vers vous <strong>sous 24h</strong> avec un devis gratuit et sans engagement. Voici le récapitulatif de ce que vous nous avez envoyé. Pour ajouter une précision, répondez simplement à cet e-mail ou appelez le 07 87 20 25 94.`,
-        table(data))
+      subject: 'Nous avons bien reçu votre demande – AQUA-R-WEB',
+      html: layout(
+        'Merci pour votre demande. Nous revenons vers vous sous 24h avec un devis gratuit.',
+        `Merci ${esc(prenom)}, votre demande est bien arrivée ✅`,
+        `<p style="margin:0 0 12px">Nous avons bien reçu votre demande de <strong>${esc(typeCourt.toLowerCase())}</strong>. Nous l'étudions et nous vous recontactons <strong>sous 24h</strong> avec un devis gratuit et sans engagement.</p>
+         <p style="margin:0 0 6px;font-weight:700;color:#0b2a20">La suite, en 3 étapes :</p>
+         <ol style="margin:0 0 14px;padding-left:20px">
+           <li>Nous échangeons avec vous sur votre activité et vos objectifs.</li>
+           <li>Vous recevez un devis détaillé et une proposition de design.</li>
+           <li>Nous créons votre site, vous validez, et il est mis en ligne.</li>
+         </ol>
+         <p style="margin:0 0 14px">Vous avez oublié un détail ? Répondez simplement à cet e-mail. Pour aller plus vite, appelez-nous au <a href="${PHONE_LINK}" style="color:#0b7a58;font-weight:700">${PHONE}</a>.</p>
+         <p style="margin:0;font-size:13px;color:#5b7d70">Voici le récapitulatif de votre demande :</p>`,
+        sectionsHtml(data) + `<p style="margin:6px 0 0;color:#33574a">À très bientôt,<br><strong>L'équipe AQUA-R-WEB</strong></p>`
+      ),
+      text: `Bonjour ${prenom},\n\nNous avons bien reçu votre demande de ${typeCourt.toLowerCase()}. Nous l'étudions et nous vous recontactons sous 24h avec un devis gratuit et sans engagement.\n\nVous avez oublié un détail ? Répondez simplement à cet e-mail, ou appelez-nous au ${PHONE}.\n\nRÉCAPITULATIF\n\n${sectionsText(data)}\n\nÀ très bientôt,\nL'équipe AQUA-R-WEB\n${SITE}`
     });
   } catch (e) { console.error(e); confirmation = false; }
 
