@@ -287,7 +287,7 @@
     }
     function mailtoLink(d){
       var lines=[]; Object.keys(d).forEach(function(k){ if(k==='rgpd'||k==='site_web_confirm'||!d[k]) return; lines.push(k.replace(/_/g,' ')+' : '+(Array.isArray(d[k])?d[k].join(', '):d[k])); });
-      return 'mailto:aquaweb57@gmail.com?subject='+encodeURIComponent('Web project request —'+(d.entreprise||d.nom||''))+'&body='+encodeURIComponent(lines.join('\n'));
+      return 'mailto:aquaweb57@gmail.com?subject='+encodeURIComponent('Web project request — '+(d.entreprise||d.nom||''))+'&body='+encodeURIComponent(lines.join('\n'));
     }
     function show(cls,html){status.className='status '+cls;status.innerHTML=html;status.scrollIntoView({behavior:'smooth',block:'center'});}
 
@@ -301,7 +301,7 @@
         .then(function(res){
           if(!res.ok) throw new Error(res.j.error||'Erreur');
           form.reset(); toggleReprise();
-          show('ok','✅ <strong>Request sent!</strong>'+(res.j.confirmation?'A summary has just been sent to you by email.':'')+'We will get back to you within 24 hours. Need it faster? <a href="tel:0787202594" style="text-decoration:underline">+33 7 87 20 25 94</a>');
+          show('ok','✅ <strong>Request sent!</strong> '+(res.j.confirmation?'A summary has just been sent to you by email. ':'')+'We will get back to you within 24 hours. Need it faster? <a href="tel:0787202594" style="text-decoration:underline">+33 7 87 20 25 94</a>');
         })
         .catch(function(){
           show('err','Automatic sending didn\'t work. <a href="'+mailtoLink(d)+'" style="text-decoration:underline;font-weight:700">Click here to send your pre-filled request by email</a>, or call +33 7 87 20 25 94.');
