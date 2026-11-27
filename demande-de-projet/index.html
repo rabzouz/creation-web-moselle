@@ -7,6 +7,10 @@
   <meta name="description" content="Décrivez votre projet de création ou de reprise de site internet en quelques clics : options pré-remplies, envoi immédiat et devis gratuit sous 24h.">
   <meta name="robots" content="index,follow">
   <link rel="canonical" href="https://creation-web-moselle.fr/demande-de-projet/">
+  <link rel="alternate" hreflang="fr" href="https://creation-web-moselle.fr/demande-de-projet/">
+  <link rel="alternate" hreflang="en" href="https://creation-web-moselle.fr/en/project-request/">
+  <link rel="alternate" hreflang="lb" href="https://creation-web-moselle.fr/lb/projet-ufro/">
+  <link rel="alternate" hreflang="x-default" href="https://creation-web-moselle.fr/demande-de-projet/">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://creation-web-moselle.fr/demande-de-projet/">
   <meta property="og:title" content="Votre demande de projet web – AQUA-R-WEB">
@@ -61,7 +65,7 @@
 </head>
 <body>
   <a class="skip" href="#contenu">Aller au contenu</a>
-  <div class="topbar">📝 Votre projet en 5 minutes — réponse et devis gratuit sous 24h</div>
+  <div class="topbar">📝 Votre projet en 5 minutes — réponse et devis gratuit sous 24h<nav class="lang-switch" aria-label="Langue / Language / Sprooch" style="display:inline-flex;gap:.25rem;margin-left:.8rem;padding:.12rem .25rem;border-radius:999px;background:rgba(36,18,4,.12);font-size:.78rem;vertical-align:middle"><strong aria-current="true" style="padding:.1rem .45rem;border-radius:999px;background:rgba(36,18,4,.85);color:#ffc15c">FR</strong><a href="/en/project-request/" hreflang="en" lang="en" style="padding:.1rem .45rem;border-radius:999px;text-decoration:none">EN</a><a href="/lb/projet-ufro/" hreflang="lb" lang="lb" style="padding:.1rem .45rem;border-radius:999px;text-decoration:none">LB</a></nav></div>
   <header>
     <div class="wrap nav">
       <a class="brand" href="/" aria-label="AQUA-R-WEB, accueil"><img src="../logo-aqua-r-web-256.png" width="256" height="256" alt=""><span>AQUA-R-<em>WEB</em></span></a>
@@ -85,7 +89,7 @@
             <p class="hint">Vous partez de zéro ou vous avez déjà un site à reprendre ?</p>
             <div class="big-choice chips">
               <label class="chip"><input type="radio" name="type_demande" value="Création d'un nouveau site" checked><span><strong>🚀 Création d'un site</strong>Je n'ai pas encore de site internet</span></label>
-              <label class="chip"><input type="radio" name="type_demande" value="Reprise / refonte d'un site existant"><span><strong>🔧 Reprise / refonte</strong>J'ai un site à moderniser, réparer ou reprendre</span></label>
+              <label class="chip"><input type="radio" name="type_demande" value="Reprise / refonte d'un site existant" data-reprise><span><strong>🔧 Reprise / refonte</strong>J'ai un site à moderniser, réparer ou reprendre</span></label>
             </div>
             <div id="bloc-reprise" class="hidden">
               <div class="row">
@@ -245,7 +249,8 @@
   (function(){
     var form=document.getElementById('brief'), status=document.getElementById('status'), btn=document.getElementById('envoyer');
     var reprise=document.getElementById('bloc-reprise');
-    function toggleReprise(){var v=form.querySelector('input[name=type_demande]:checked').value;reprise.classList.toggle('hidden',v.indexOf('Reprise')!==0);}
+    function isReprise(){var r=form.querySelector('input[name=type_demande]:checked');return !!(r&&r.hasAttribute('data-reprise'));}
+    function toggleReprise(){reprise.classList.toggle('hidden',!isReprise());}
     form.querySelectorAll('input[name=type_demande]').forEach(function(r){r.addEventListener('change',toggleReprise);});
 
     var PRESETS={
@@ -270,14 +275,14 @@
     // pré-remplissage par l'URL : ?formule=pack|pro|essentiel|mesure &type=reprise
     var q=new URLSearchParams(location.search), map={pack:'Pack Tout Compris — 1000 €',pro:'Professionnel — 890 €',essentiel:'Essentiel — 490 €',mesure:'Sur mesure — devis'};
     if(map[q.get('formule')]) form.formule.value=map[q.get('formule')];
-    if(q.get('type')==='reprise'){form.querySelector('input[name=type_demande][value^="Reprise"]').checked=true;}
+    if(q.get('type')==='reprise'){form.querySelector('input[name=type_demande][data-reprise]').checked=true;}
     toggleReprise();
 
     function collect(){
       var d={};
       new FormData(form).forEach(function(v,k){ if(d[k]===undefined) d[k]=v; else if(Array.isArray(d[k])) d[k].push(v); else d[k]=[d[k],v]; });
       ['objectifs','pages','fonctions','probleme_actuel'].forEach(function(k){ if(typeof d[k]==='string') d[k]=[d[k]]; });
-      if(d.type_demande && d.type_demande.indexOf('Reprise')!==0){ delete d.site_actuel; delete d.hebergeur_actuel; delete d.probleme_actuel; }
+      d.reprise=isReprise(); if(!d.reprise){ delete d.site_actuel; delete d.hebergeur_actuel; delete d.probleme_actuel; }
       return d;
     }
     function mailtoLink(d){

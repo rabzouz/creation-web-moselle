@@ -1,0 +1,315 @@
+<!doctype html>
+<html lang="lb">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <title>Ufro fir eng nei Websäit oder eng Iwweraarbechtung | AQUA-R-WEB</title>
+  <meta name="description" content="Beschreift an e puer Klicks Äre Projet fir eng nei Websäit oder d&#x27;Iwwerhuele vun Ärer Websäit: virausgefëllt Optiounen, direkt verschéckt a gratis Devis bannent 24 Stonnen.">
+  <meta name="robots" content="index,follow">
+  <link rel="canonical" href="https://creation-web-moselle.fr/lb/projet-ufro/">
+  <link rel="alternate" hreflang="fr" href="https://creation-web-moselle.fr/demande-de-projet/">
+  <link rel="alternate" hreflang="en" href="https://creation-web-moselle.fr/en/project-request/">
+  <link rel="alternate" hreflang="lb" href="https://creation-web-moselle.fr/lb/projet-ufro/">
+  <link rel="alternate" hreflang="x-default" href="https://creation-web-moselle.fr/demande-de-projet/">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://creation-web-moselle.fr/lb/projet-ufro/">
+  <meta property="og:title" content="Är Webprojet-Ufro – AQUA-R-WEB">
+  <meta property="og:description" content="Nei Websäit oder Iwwerhuelen: fëllt de Formulaire aus a kritt Äre gratis Devis bannent 24 Stonnen.">
+  <meta property="og:image" content="https://creation-web-moselle.fr/hero.jpg">
+  <meta property="og:locale" content="lb_LU">
+  <link rel="icon" href="../../logo-aqua-r-web-256.png" type="image/png">
+  <link rel="apple-touch-icon" href="../../apple-touch-icon-aqua-r-web.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../local-pages.css">
+  <style>
+    .brief{max-width:860px;margin:0 auto}
+    .step{background:linear-gradient(165deg,var(--hull),var(--deep));border:1px solid var(--line);border-radius:20px;padding:1.6rem;margin-bottom:1.3rem}
+    .step h2{font-size:1.25rem;margin-bottom:.3rem;display:flex;gap:.6rem;align-items:center}
+    .step h2 b{display:inline-grid;place-items:center;width:2rem;height:2rem;border-radius:50%;background:var(--emerald);color:var(--abyss);font-size:1rem}
+    .step .hint{color:var(--mist);font-size:.92rem;margin-bottom:1rem}
+    .row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+    @media(max-width:640px){.row{grid-template-columns:1fr}}
+    .field{display:flex;flex-direction:column;gap:.35rem;margin-bottom:.9rem}
+    .field label,.legend{font-weight:600;font-size:.93rem}
+    .req{color:var(--flare)}
+    input[type=text],input[type=email],input[type=tel],input[type=url],select,textarea{width:100%;background:rgba(4,20,15,.65);border:1px solid var(--line);color:var(--gel);border-radius:12px;padding:.75rem .9rem;font:inherit;font-size:16px}
+    input:focus,select:focus,textarea:focus{outline:2px solid var(--emerald);border-color:transparent}
+    textarea{min-height:110px;resize:vertical}
+    select option{background:#072a20}
+    .chips{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:.9rem}
+    .chip{position:relative}
+    .chip input{position:absolute;opacity:0;inset:0;cursor:pointer}
+    .chip span{display:inline-block;padding:.5rem .9rem;border:1px solid var(--line);border-radius:999px;background:rgba(4,20,15,.5);font-size:.92rem;cursor:pointer;transition:.15s}
+    .chip input:checked+span{background:var(--emerald);color:var(--abyss);border-color:var(--emerald);font-weight:700}
+    .chip input:focus-visible+span{outline:2px solid var(--flare)}
+    .big-choice{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+    @media(max-width:640px){.big-choice{grid-template-columns:1fr}}
+    .big-choice .chip span{display:block;border-radius:16px;padding:1.1rem;text-align:left}
+    .big-choice .chip span strong{display:block;font-size:1.05rem;margin-bottom:.2rem}
+    .presets{display:flex;flex-wrap:wrap;gap:.5rem}
+    .presets button{background:rgba(245,166,35,.12);border:1px solid rgba(245,166,35,.5);color:var(--gel);border-radius:999px;padding:.5rem .95rem;font:inherit;font-size:.9rem;cursor:pointer}
+    .presets button:hover,.presets button.on{background:var(--flare);color:#241204;font-weight:700}
+    .hidden{display:none}
+    .hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+    .consent{display:flex;gap:.6rem;align-items:flex-start;font-size:.9rem;color:var(--mist)}
+    .consent input{margin-top:.25rem;width:18px;height:18px;accent-color:var(--emerald)}
+    .submit-bar{display:flex;flex-wrap:wrap;gap:1rem;align-items:center;margin-top:1rem}
+    .status{margin-top:1rem;padding:1rem 1.2rem;border-radius:14px;display:none}
+    .status.ok{display:block;background:rgba(16,224,160,.14);border:1px solid var(--emerald)}
+    .status.err{display:block;background:rgba(245,166,35,.12);border:1px solid var(--flare)}
+    button.btn{border:0;cursor:pointer;font:inherit}
+    button.btn[disabled]{opacity:.6;cursor:wait}
+  </style>
+</head>
+<body>
+  <a class="skip" href="#contenu">Direkt zum Inhalt</a>
+  <div class="topbar">📝 Äre Projet a 5 Minutten — Äntwert a gratis Devis bannent 24 St.<nav class="lang-switch" aria-label="Langue / Language / Sprooch" style="display:inline-flex;gap:.25rem;margin-left:.8rem;padding:.12rem .25rem;border-radius:999px;background:rgba(36,18,4,.12);font-size:.78rem;vertical-align:middle"><a href="/demande-de-projet/" hreflang="fr" lang="fr" style="padding:.1rem .45rem;border-radius:999px;text-decoration:none">FR</a><a href="/en/project-request/" hreflang="en" lang="en" style="padding:.1rem .45rem;border-radius:999px;text-decoration:none">EN</a><strong aria-current="true" style="padding:.1rem .45rem;border-radius:999px;background:rgba(36,18,4,.85);color:#ffc15c">LB</strong></nav></div>
+  <header>
+    <div class="wrap nav">
+      <a class="brand" href="/lb/" aria-label="AQUA-R-WEB, Startsäit"><img src="../../logo-aqua-r-web-256.png" width="256" height="256" alt=""><span>AQUA-R-<em>WEB</em></span></a>
+      <nav class="nav-links" aria-label="Haaptnavigatioun"><a href="/lb/#services">Servicer</a><a href="/lb/#tarifs">Präisser</a><a href="/lb/komplett-pak-websait/">Pak 1000 €</a><a href="/lb/#faq">FAQ</a></nav>
+      <a class="btn btn-primary" href="tel:0787202594">📞 Uruffen</a>
+    </div>
+  </header>
+
+  <main id="contenu">
+    <div class="wrap breadcrumb"><a href="/lb/">Startsäit</a> / Projet-Ufro</div>
+    <section>
+      <div class="wrap brief">
+        <div class="section-head"><span class="eyebrow">Client-Beräich</span><h1>Beschreift Äre <span style="color:var(--emerald)">Websäit</span>-Projet</h1><p>Eng ganz nei Websäit oder d'Iwwerhuele vun Ärer aktueller Säit: kräizt d'Optiounen un, déi op Iech passen, alles ass schonn virausgefëllt, fir datt et séier geet. Dir kritt direkt eng Kopie vun Ärer Ufro per E-Mail.</p></div>
+
+        <form id="brief" novalidate>
+          <div class="hp" aria-hidden="true"><label>Net ausfëllen <input type="text" name="site_web_confirm" data-lang="lb" tabindex="-1" autocomplete="off"></label></div>
+
+          <!-- 1 -->
+          <div class="step">
+            <h2><b>1</b> Är Ufro</h2>
+            <p class="hint">Fänkt Dir bei null un, oder hutt Dir schonn eng Websäit, déi iwwerholl soll ginn?</p>
+            <div class="big-choice chips">
+              <label class="chip"><input type="radio" name="type_demande" value="Nei Websäit" checked><span><strong>🚀 Nei Websäit</strong>Ech hunn nach keng Websäit</span></label>
+              <label class="chip"><input type="radio" name="type_demande" value="Iwwerhuelen / Iwweraarbechtung vun enger bestoender Websäit" data-reprise><span><strong>🔧 Iwwerhuelen / Iwweraarbechtung</strong>Ech hunn eng Websäit, déi moderniséiert, reparéiert oder iwwerholl soll ginn</span></label>
+            </div>
+            <div id="bloc-reprise" class="hidden">
+              <div class="row">
+                <div class="field"><label for="site_actuel">Adress vun der aktueller Websäit</label><input type="url" id="site_actuel" name="site_actuel" placeholder="https://www.meng-websait.lu"></div>
+                <div class="field"><label for="hebergeur_actuel">Hosting / Zougang</label>
+                  <select id="hebergeur_actuel" name="hebergeur_actuel">
+                    <option>Ech weess et net</option><option>Ech hunn d'Zougäng (WordPress, Wix…)</option><option>OVH</option><option>Hostinger</option><option>IONOS</option><option>Wix / Jimdo / Squarespace</option><option>Fréieren Ubidder, keen Kontakt méi</option>
+                  </select></div>
+              </div>
+              <span class="legend">Wat haut net gutt ass</span>
+              <div class="chips" data-group="probleme_actuel">
+                <label class="chip"><input type="checkbox" name="probleme_actuel" value="Alen Design"><span>Alen Design</span></label>
+                <label class="chip"><input type="checkbox" name="probleme_actuel" value="Net op Google ze fannen"><span>Net op Google ze fannen</span></label>
+                <label class="chip"><input type="checkbox" name="probleme_actuel" value="Schlecht um Handy"><span>Schlecht um Handy</span></label>
+                <label class="chip"><input type="checkbox" name="probleme_actuel" value="Ze lues"><span>Ze lues</span></label>
+                <label class="chip"><input type="checkbox" name="probleme_actuel" value="Websäit a Panne / gehackt"><span>Websäit a Panne / gehackt</span></label>
+                <label class="chip"><input type="checkbox" name="probleme_actuel" value="Ech kann se net änneren"><span>Ech kann se net änneren</span></label>
+                <label class="chip"><input type="checkbox" name="probleme_actuel" value="Hosting ze deier"><span>Hosting ze deier</span></label>
+              </div>
+            </div>
+          </div>
+
+          <!-- 2 -->
+          <div class="step">
+            <h2><b>2</b> Är Aktivitéit</h2>
+            <p class="hint">Wielt e Profil: déi passend Säiten an Optioune ginn automatesch ugekräizt (Dir kënnt se duerno änneren).</p>
+            <div class="presets" id="presets">
+              <button type="button" data-preset="artisan">🔨 Handwierk / Bau</button>
+              <button type="button" data-preset="commerce">🛍️ Geschäft / Boutique</button>
+              <button type="button" data-preset="ecommerce">🛒 Online-Verkaf</button>
+              <button type="button" data-preset="restaurant">🍽️ Restaurant / Snack</button>
+              <button type="button" data-preset="beaute">💇 Coiffeur / Schéinheet</button>
+              <button type="button" data-preset="services">💼 Servicer / Berodung</button>
+              <button type="button" data-preset="loisirs">🌊 Fräizäit / Tourismus</button>
+            </div>
+            <div class="row" style="margin-top:1rem">
+              <div class="field"><label for="secteur">Branche</label><input type="text" id="secteur" name="secteur" placeholder="z. B. Spengler, Coiffeursalon, Kleedergeschäft"></div>
+              <div class="field"><label for="ville">Stad / Gebitt</label><input type="text" id="ville" name="ville" value="Musel" placeholder="z. B. Metz an 30 km ronderëm"></div>
+            </div>
+          </div>
+
+          <!-- 3 -->
+          <div class="step">
+            <h2><b>3</b> Formule an Ziler</h2>
+            <div class="field"><label for="formule">Formule, déi Iech interesséiert</label>
+              <select id="formule" name="formule">
+                <option value="Komplett-Pak — 1000 €" selected>⭐ Komplett-Pak — 1000 €</option>
+                <option value="Professionnel — 890 €">Professionnel — 890 € (4 bis 6 Säiten)</option>
+                <option value="Essentiel — 490 €">Essentiel — 490 € (1 Säit)</option>
+                <option value="Op Mooss — Devis">Op Mooss — Devis</option>
+                <option value="Ech weess et net, rot mir w.e.g.">Ech weess et net, rot mir w.e.g.</option>
+              </select></div>
+            <span class="legend">Är Ziler</span>
+            <div class="chips">
+              <label class="chip"><input type="checkbox" name="objectifs" value="Op der 1. Säit vu Google sinn" checked><span>Op der 1. Säit vu Google sinn</span></label>
+              <label class="chip"><input type="checkbox" name="objectifs" value="Uriff an Devis-Ufroe kréien" checked><span>Uriff an Devis-Ufroe kréien</span></label>
+              <label class="chip"><input type="checkbox" name="objectifs" value="Online verkafen"><span>Online verkafen</span></label>
+              <label class="chip"><input type="checkbox" name="objectifs" value="Rendez-vous-Buchung"><span>Rendez-vous-Buchung</span></label>
+              <label class="chip"><input type="checkbox" name="objectifs" value="Meng Projete weisen"><span>Meng Projete weisen</span></label>
+              <label class="chip"><input type="checkbox" name="objectifs" value="Professionellen Image / Vertrauen" checked><span>Professionellen Image</span></label>
+              <label class="chip"><input type="checkbox" name="objectifs" value="Bei den IAen siichtbar sinn (ChatGPT, Gemini)"><span>Siichtbar bei den IAen</span></label>
+            </div>
+            <div class="field"><label for="mots_cles">Schlësselwierder, mat deenen Dir fonnt wëllt ginn</label><input type="text" id="mots_cles" name="mots_cles" placeholder="z. B. Spengler Metz, Heizungsdepannage Musel"></div>
+          </div>
+
+          <!-- 4 -->
+          <div class="step">
+            <h2><b>4</b> Säiten a Funktiounen</h2>
+            <span class="legend">Gewënschte Säiten</span>
+            <div class="chips" id="pages">
+              <label class="chip"><input type="checkbox" name="pages" value="Startsäit" checked><span>Startsäit</span></label>
+              <label class="chip"><input type="checkbox" name="pages" value="Servicer / Prestatiounen" checked><span>Servicer / Prestatiounen</span></label>
+              <label class="chip"><input type="checkbox" name="pages" value="Iwwer eis"><span>Iwwer eis</span></label>
+              <label class="chip"><input type="checkbox" name="pages" value="Projeten / Galerie"><span>Projeten / Galerie</span></label>
+              <label class="chip"><input type="checkbox" name="pages" value="Präisser"><span>Präisser</span></label>
+              <label class="chip"><input type="checkbox" name="pages" value="Clientsbewäertungen"><span>Clientsbewäertungen</span></label>
+              <label class="chip"><input type="checkbox" name="pages" value="Menü / Kaart"><span>Menü / Kaart</span></label>
+              <label class="chip"><input type="checkbox" name="pages" value="Boutique / Katalog"><span>Boutique / Katalog</span></label>
+              <label class="chip"><input type="checkbox" name="pages" value="Blog / Neiegkeeten"><span>Blog / Neiegkeeten</span></label>
+              <label class="chip"><input type="checkbox" name="pages" value="FAQ"><span>FAQ</span></label>
+              <label class="chip"><input type="checkbox" name="pages" value="Kontakt" checked><span>Kontakt</span></label>
+            </div>
+            <span class="legend">Funktiounen</span>
+            <div class="chips" id="fonctions">
+              <label class="chip"><input type="checkbox" name="fonctions" value="Kontaktformulaire" checked><span>Kontaktformulaire</span></label>
+              <label class="chip"><input type="checkbox" name="fonctions" value="Uruff- + WhatsApp-Knäppchen" checked><span>Uruff- + WhatsApp-Knäppchen</span></label>
+              <label class="chip"><input type="checkbox" name="fonctions" value="Google Maps" checked><span>Google Maps</span></label>
+              <label class="chip"><input type="checkbox" name="fonctions" value="Google-Business-Profil"><span>Google-Business-Profil</span></label>
+              <label class="chip"><input type="checkbox" name="fonctions" value="Online-Reservatioun"><span>Online-Reservatioun</span></label>
+              <label class="chip"><input type="checkbox" name="fonctions" value="Online-Bezuelung"><span>Online-Bezuelung</span></label>
+              <label class="chip"><input type="checkbox" name="fonctions" value="Google-Bewäertungen ugewisen"><span>Google-Bewäertungen ugewisen</span></label>
+              <label class="chip"><input type="checkbox" name="fonctions" value="Méisproocheg Websäit"><span>Méisproocheg</span></label>
+              <label class="chip"><input type="checkbox" name="fonctions" value="Sozial Netzwierker"><span>Sozial Netzwierker</span></label>
+              <label class="chip"><input type="checkbox" name="fonctions" value="IA-Agent / Telefonsbeäntwerter"><span>IA-Agent / Telefonsbeäntwerter</span></label>
+            </div>
+          </div>
+
+          <!-- 5 -->
+          <div class="step">
+            <h2><b>5</b> Image an Inhalter</h2>
+            <div class="row">
+              <div class="field"><label for="logo">Logo</label><select id="logo" name="logo"><option>Ech hu schonn e Logo</option><option selected>Logo ze kreéieren</option><option>Logo ze moderniséieren</option></select></div>
+              <div class="field"><label for="couleurs">Faarwen / Stil</label><input type="text" id="couleurs" name="couleurs" placeholder="z. B. blo a wäiss, modern, schlicht"></div>
+              <div class="field"><label for="textes">Texter vun der Websäit</label><select id="textes" name="textes"><option selected>Vun AQUA-R-WEB ze schreiwen</option><option>Ech liwweren meng Texter</option><option>Déi vun der aktueller Websäit iwwerhuelen</option></select></div>
+              <div class="field"><label for="photos">Fotoen</label><select id="photos" name="photos"><option selected>Ech hu meng Fotoen</option><option>Fotoen ze fannen (Billerbank)</option><option>Mëschung vu béidem</option></select></div>
+              <div class="field"><label for="domaine">Domain-Numm</label><select id="domaine" name="domaine"><option selected>Ze reservéieren (abegraff)</option><option>Ech hu schonn en Domain-Numm</option></select></div>
+              <div class="field"><label for="domaine_souhaite">Gewënschten oder aktuellen Numm</label><input type="text" id="domaine_souhaite" name="domaine_souhaite" placeholder="z. B. spenglerei-muller.lu"></div>
+            </div>
+            <div class="field"><label for="inspirations">Websäiten, déi Iech gefalen (fakultativ)</label><input type="text" id="inspirations" name="inspirations" placeholder="Linke vu Websäiten, Konkurrenten…"></div>
+          </div>
+
+          <!-- 6 -->
+          <div class="step">
+            <h2><b>6</b> Delai a Budget</h2>
+            <span class="legend">Gewënschten Delai</span>
+            <div class="chips">
+              <label class="chip"><input type="radio" name="delai" value="Dréngend (manner wéi 2 Wochen)"><span>⚡ Dréngend &lt; 2 Wochen</span></label>
+              <label class="chip"><input type="radio" name="delai" value="Am Laf vum Mount" checked><span>Am Laf vum Mount</span></label>
+              <label class="chip"><input type="radio" name="delai" value="1 bis 3 Méint"><span>1 bis 3 Méint</span></label>
+              <label class="chip"><input type="radio" name="delai" value="Net presséiert"><span>Net presséiert</span></label>
+            </div>
+            <div class="field"><label for="budget">Budget</label>
+              <select id="budget" name="budget"><option>Manner wéi 500 €</option><option>500 bis 900 €</option><option selected>Ronn 1000 €</option><option>1000 bis 2000 €</option><option>Méi wéi 2000 €</option><option>Zesumme festzeleeën</option></select></div>
+          </div>
+
+          <!-- 7 -->
+          <div class="step">
+            <h2><b>7</b> Är Kontaktdaten</h2>
+            <div class="row">
+              <div class="field"><label for="nom">Numm a Virnumm <span class="req">*</span></label><input type="text" id="nom" name="nom" required autocomplete="name"></div>
+              <div class="field"><label for="entreprise">Betrib</label><input type="text" id="entreprise" name="entreprise" autocomplete="organization"></div>
+              <div class="field"><label for="email">E-Mail <span class="req">*</span></label><input type="email" id="email" name="email" required autocomplete="email" inputmode="email"></div>
+              <div class="field"><label for="telephone">Telefon</label><input type="tel" id="telephone" name="telephone" autocomplete="tel" inputmode="tel"></div>
+            </div>
+            <span class="legend">Wéi wëllt Dir am léifste kontaktéiert ginn?</span>
+            <div class="chips">
+              <label class="chip"><input type="radio" name="rappel" value="Per Telefon" checked><span>📞 Telefon</span></label>
+              <label class="chip"><input type="radio" name="rappel" value="Per WhatsApp"><span>💬 WhatsApp</span></label>
+              <label class="chip"><input type="radio" name="rappel" value="Per E-Mail"><span>✉️ E-Mail</span></label>
+            </div>
+            <div class="field"><label for="message">Nach eppes, wat Dir eis wëllt soen?</label><textarea id="message" name="message" placeholder="Detailer, Froen, Iddien…"></textarea></div>
+            <label class="consent"><input type="checkbox" name="rgpd" id="rgpd" required><span>Ech sinn d'accord, datt meng Donnéeë benotzt ginn, fir meng Ufro ze behandelen a mech ze kontaktéieren. <a href="/lb/dateschutz/" style="text-decoration:underline">Dateschutz</a> <span class="req">*</span></span></label>
+            <div class="submit-bar">
+              <button type="submit" class="btn btn-primary" id="envoyer">📨 Meng Ufro schécken</button>
+              <span style="color:var(--mist);font-size:.9rem">Dir kritt direkt eng Kopie per E-Mail.</span>
+            </div>
+            <div class="status" id="status" role="status" aria-live="polite"></div>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer><div class="wrap foot"><span>© 2026 AQUA-R-WEB · Web-Service vun AQUA-R-FLY</span><span><a href="/lb/">Startsäit</a> · <a href="/lb/#contact">Kontakt</a> · <a href="/lb/impressum/">Impressum</a> · <a href="/lb/dateschutz/">Dateschutz</a></span></div></footer>
+
+  <script>
+  (function(){
+    var form=document.getElementById('brief'), status=document.getElementById('status'), btn=document.getElementById('envoyer');
+    var reprise=document.getElementById('bloc-reprise');
+    function isReprise(){var r=form.querySelector('input[name=type_demande]:checked');return !!(r&&r.hasAttribute('data-reprise'));}
+    function toggleReprise(){reprise.classList.toggle('hidden',!isReprise());}
+    form.querySelectorAll('input[name=type_demande]').forEach(function(r){r.addEventListener('change',toggleReprise);});
+
+    var PRESETS={
+      artisan:{secteur:'Handwierk / Bau',pages:['Startsäit','Servicer / Prestatiounen','Projeten / Galerie','Clientsbewäertungen','Kontakt'],fonctions:['Kontaktformulaire','Uruff- + WhatsApp-Knäppchen','Google Maps','Google-Business-Profil','Google-Bewäertungen ugewisen'],objectifs:['Op der 1. Säit vu Google sinn','Uriff an Devis-Ufroe kréien','Meng Projete weisen']},
+      commerce:{secteur:'Geschäft / Boutique',pages:['Startsäit','Servicer / Prestatiounen','Iwwer eis','Clientsbewäertungen','Kontakt'],fonctions:['Kontaktformulaire','Uruff- + WhatsApp-Knäppchen','Google Maps','Google-Business-Profil','Sozial Netzwierker'],objectifs:['Op der 1. Säit vu Google sinn','Professionellen Image / Vertrauen']},
+      ecommerce:{secteur:'Online-Verkaf / E-Commerce',formule:'Op Mooss — Devis',pages:['Startsäit','Boutique / Katalog','Iwwer eis','FAQ','Kontakt'],fonctions:['Kontaktformulaire','Online-Bezuelung','Sozial Netzwierker','Uruff- + WhatsApp-Knäppchen'],objectifs:['Online verkafen','Op der 1. Säit vu Google sinn','Bei den IAen siichtbar sinn (ChatGPT, Gemini)']},
+      restaurant:{secteur:'Restaurant / Snack',pages:['Startsäit','Menü / Kaart','Iwwer eis','Clientsbewäertungen','Kontakt'],fonctions:['Uruff- + WhatsApp-Knäppchen','Google Maps','Google-Business-Profil','Online-Reservatioun','Google-Bewäertungen ugewisen','Sozial Netzwierker'],objectifs:['Op der 1. Säit vu Google sinn','Rendez-vous-Buchung','Professionellen Image / Vertrauen']},
+      beaute:{secteur:'Coiffeur / Schéinheet',pages:['Startsäit','Servicer / Prestatiounen','Präisser','Projeten / Galerie','Clientsbewäertungen','Kontakt'],fonctions:['Uruff- + WhatsApp-Knäppchen','Google Maps','Google-Business-Profil','Online-Reservatioun','Google-Bewäertungen ugewisen','Sozial Netzwierker'],objectifs:['Op der 1. Säit vu Google sinn','Rendez-vous-Buchung','Meng Projete weisen']},
+      services:{secteur:'Servicer / Berodung',pages:['Startsäit','Servicer / Prestatiounen','Iwwer eis','Präisser','FAQ','Kontakt'],fonctions:['Kontaktformulaire','Uruff- + WhatsApp-Knäppchen','Google-Business-Profil'],objectifs:['Op der 1. Säit vu Google sinn','Uriff an Devis-Ufroe kréien','Professionellen Image / Vertrauen']},
+      loisirs:{secteur:'Fräizäit / Tourismus',pages:['Startsäit','Servicer / Prestatiounen','Präisser','Projeten / Galerie','Clientsbewäertungen','FAQ','Kontakt'],fonctions:['Uruff- + WhatsApp-Knäppchen','Google Maps','Online-Reservatioun','Online-Bezuelung','Méisproocheg Websäit','Sozial Netzwierker'],objectifs:['Op der 1. Säit vu Google sinn','Rendez-vous-Buchung','Online verkafen']}
+    };
+    function setGroup(name,values){form.querySelectorAll('input[name="'+name+'"]').forEach(function(c){c.checked=values.indexOf(c.value)!==-1;});}
+    document.querySelectorAll('#presets button').forEach(function(b){
+      b.addEventListener('click',function(){
+        var p=PRESETS[b.dataset.preset]; if(!p) return;
+        document.querySelectorAll('#presets button').forEach(function(x){x.classList.remove('on');}); b.classList.add('on');
+        form.secteur.value=p.secteur; setGroup('pages',p.pages); setGroup('fonctions',p.fonctions); setGroup('objectifs',p.objectifs);
+        form.formule.value=p.formule||'Komplett-Pak — 1000 €';
+      });
+    });
+
+    // pré-remplissage par l'URL : ?formule=pack|pro|essentiel|mesure &type=reprise
+    var q=new URLSearchParams(location.search), map={pack:'Komplett-Pak — 1000 €',pro:'Professionnel — 890 €',essentiel:'Essentiel — 490 €',mesure:'Op Mooss — Devis'};
+    if(map[q.get('formule')]) form.formule.value=map[q.get('formule')];
+    if(q.get('type')==='reprise'){form.querySelector('input[name=type_demande][data-reprise]').checked=true;}
+    toggleReprise();
+
+    function collect(){
+      var d={lang:'lb'};
+      new FormData(form).forEach(function(v,k){ if(d[k]===undefined) d[k]=v; else if(Array.isArray(d[k])) d[k].push(v); else d[k]=[d[k],v]; });
+      ['objectifs','pages','fonctions','probleme_actuel'].forEach(function(k){ if(typeof d[k]==='string') d[k]=[d[k]]; });
+      d.reprise=isReprise(); if(!d.reprise){ delete d.site_actuel; delete d.hebergeur_actuel; delete d.probleme_actuel; }
+      return d;
+    }
+    function mailtoLink(d){
+      var lines=[]; Object.keys(d).forEach(function(k){ if(k==='rgpd'||k==='site_web_confirm'||!d[k]) return; lines.push(k.replace(/_/g,' ')+' : '+(Array.isArray(d[k])?d[k].join(', '):d[k])); });
+      return 'mailto:aquaweb57@gmail.com?subject='+encodeURIComponent('Webprojet-Ufro —'+(d.entreprise||d.nom||''))+'&body='+encodeURIComponent(lines.join('\n'));
+    }
+    function show(cls,html){status.className='status '+cls;status.innerHTML=html;status.scrollIntoView({behavior:'smooth',block:'center'});}
+
+    form.addEventListener('submit',function(e){
+      e.preventDefault();
+      if(!form.nom.value.trim()||!form.email.checkValidity()||!form.email.value){ show('err','Gitt w.e.g. Ären <strong>Numm</strong> an eng <strong>gülteg E-Mail-Adress</strong> un.'); return; }
+      if(!form.rgpd.checked){ show('err','Kräizt w.e.g. d\'Zoustëmmungskeschtchen un, fir Är Ufro ze schécken.'); return; }
+      var d=collect(); btn.disabled=true; btn.textContent='Gëtt geschéckt…';
+      fetch('/api/demande',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(d)})
+        .then(function(r){return r.json().then(function(j){return {ok:r.ok&&j.ok,j:j};});})
+        .then(function(res){
+          if(!res.ok) throw new Error(res.j.error||'Erreur');
+          form.reset(); toggleReprise();
+          show('ok','✅ <strong>Ufro geschéckt!</strong>'+(res.j.confirmation?'E Resumé ass Iech elo per E-Mail geschéckt ginn.':'')+'Mir mellen eis bannent 24 Stonnen. Et muss méi séier goen? <a href="tel:0787202594" style="text-decoration:underline">+33 7 87 20 25 94</a>');
+        })
+        .catch(function(){
+          show('err','Den automateschen Versand huet net funktionéiert. <a href="'+mailtoLink(d)+'" style="text-decoration:underline;font-weight:700">Klickt hei, fir Är virausgefëllt Ufro per E-Mail ze schécken</a>, oder rufft +33 7 87 20 25 94 un.');
+        })
+        .finally(function(){btn.disabled=false;btn.textContent='📨 Meng Ufro schécken';});
+    });
+  })();
+  </script>
+  <script src="/cookie-consent.js" defer></script>
+</body>
+</html>
