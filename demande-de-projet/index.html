@@ -1,0 +1,310 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <title>Demande de création ou refonte de site internet | AQUA-R-WEB</title>
+  <meta name="description" content="Décrivez votre projet de création ou de reprise de site internet en quelques clics : options pré-remplies, envoi immédiat et devis gratuit sous 24h.">
+  <meta name="robots" content="index,follow">
+  <link rel="canonical" href="https://creation-web-moselle.fr/demande-de-projet/">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://creation-web-moselle.fr/demande-de-projet/">
+  <meta property="og:title" content="Votre demande de projet web – AQUA-R-WEB">
+  <meta property="og:description" content="Création ou reprise de site : remplissez le formulaire, recevez votre devis gratuit sous 24h.">
+  <meta property="og:image" content="https://creation-web-moselle.fr/hero.jpg">
+  <meta property="og:locale" content="fr_FR">
+  <link rel="icon" href="../logo-aqua-r-web-256.png" type="image/png">
+  <link rel="apple-touch-icon" href="../apple-touch-icon-aqua-r-web.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../local-pages.css">
+  <style>
+    .brief{max-width:860px;margin:0 auto}
+    .step{background:linear-gradient(165deg,var(--hull),var(--deep));border:1px solid var(--line);border-radius:20px;padding:1.6rem;margin-bottom:1.3rem}
+    .step h2{font-size:1.25rem;margin-bottom:.3rem;display:flex;gap:.6rem;align-items:center}
+    .step h2 b{display:inline-grid;place-items:center;width:2rem;height:2rem;border-radius:50%;background:var(--emerald);color:var(--abyss);font-size:1rem}
+    .step .hint{color:var(--mist);font-size:.92rem;margin-bottom:1rem}
+    .row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+    @media(max-width:640px){.row{grid-template-columns:1fr}}
+    .field{display:flex;flex-direction:column;gap:.35rem;margin-bottom:.9rem}
+    .field label,.legend{font-weight:600;font-size:.93rem}
+    .req{color:var(--flare)}
+    input[type=text],input[type=email],input[type=tel],input[type=url],select,textarea{width:100%;background:rgba(4,20,15,.65);border:1px solid var(--line);color:var(--gel);border-radius:12px;padding:.75rem .9rem;font:inherit;font-size:16px}
+    input:focus,select:focus,textarea:focus{outline:2px solid var(--emerald);border-color:transparent}
+    textarea{min-height:110px;resize:vertical}
+    select option{background:#072a20}
+    .chips{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:.9rem}
+    .chip{position:relative}
+    .chip input{position:absolute;opacity:0;inset:0;cursor:pointer}
+    .chip span{display:inline-block;padding:.5rem .9rem;border:1px solid var(--line);border-radius:999px;background:rgba(4,20,15,.5);font-size:.92rem;cursor:pointer;transition:.15s}
+    .chip input:checked+span{background:var(--emerald);color:var(--abyss);border-color:var(--emerald);font-weight:700}
+    .chip input:focus-visible+span{outline:2px solid var(--flare)}
+    .big-choice{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+    @media(max-width:640px){.big-choice{grid-template-columns:1fr}}
+    .big-choice .chip span{display:block;border-radius:16px;padding:1.1rem;text-align:left}
+    .big-choice .chip span strong{display:block;font-size:1.05rem;margin-bottom:.2rem}
+    .presets{display:flex;flex-wrap:wrap;gap:.5rem}
+    .presets button{background:rgba(245,166,35,.12);border:1px solid rgba(245,166,35,.5);color:var(--gel);border-radius:999px;padding:.5rem .95rem;font:inherit;font-size:.9rem;cursor:pointer}
+    .presets button:hover,.presets button.on{background:var(--flare);color:#241204;font-weight:700}
+    .hidden{display:none}
+    .hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+    .consent{display:flex;gap:.6rem;align-items:flex-start;font-size:.9rem;color:var(--mist)}
+    .consent input{margin-top:.25rem;width:18px;height:18px;accent-color:var(--emerald)}
+    .submit-bar{display:flex;flex-wrap:wrap;gap:1rem;align-items:center;margin-top:1rem}
+    .status{margin-top:1rem;padding:1rem 1.2rem;border-radius:14px;display:none}
+    .status.ok{display:block;background:rgba(16,224,160,.14);border:1px solid var(--emerald)}
+    .status.err{display:block;background:rgba(245,166,35,.12);border:1px solid var(--flare)}
+    button.btn{border:0;cursor:pointer;font:inherit}
+    button.btn[disabled]{opacity:.6;cursor:wait}
+  </style>
+</head>
+<body>
+  <a class="skip" href="#contenu">Aller au contenu</a>
+  <div class="topbar">📝 Votre projet en 5 minutes — réponse et devis gratuit sous 24h</div>
+  <header>
+    <div class="wrap nav">
+      <a class="brand" href="/" aria-label="AQUA-R-WEB, accueil"><img src="../logo-aqua-r-web-256.png" width="256" height="256" alt=""><span>AQUA-R-<em>WEB</em></span></a>
+      <nav class="nav-links" aria-label="Navigation principale"><a href="/#services">Services</a><a href="/#tarifs">Tarifs</a><a href="/pack-site-internet-tout-compris/">Pack 1000 €</a><a href="/#faq">FAQ</a></nav>
+      <a class="btn btn-primary" href="tel:0787202594">📞 Appeler</a>
+    </div>
+  </header>
+
+  <main id="contenu">
+    <div class="wrap breadcrumb"><a href="/">Accueil</a> / Demande de projet</div>
+    <section>
+      <div class="wrap brief">
+        <div class="section-head"><span class="eyebrow">Espace client</span><h1>Décrivez votre projet de <span style="color:var(--emerald)">site internet</span></h1><p>Création d'un nouveau site ou reprise de votre site actuel : cochez les options qui vous correspondent, tout est déjà pré-rempli pour aller vite. Vous recevez immédiatement une copie de votre demande par e-mail.</p></div>
+
+        <form id="brief" novalidate>
+          <div class="hp" aria-hidden="true"><label>Ne pas remplir <input type="text" name="site_web_confirm" tabindex="-1" autocomplete="off"></label></div>
+
+          <!-- 1 -->
+          <div class="step">
+            <h2><b>1</b> Votre demande</h2>
+            <p class="hint">Vous partez de zéro ou vous avez déjà un site à reprendre ?</p>
+            <div class="big-choice chips">
+              <label class="chip"><input type="radio" name="type_demande" value="Création d'un nouveau site" checked><span><strong>🚀 Création d'un site</strong>Je n'ai pas encore de site internet</span></label>
+              <label class="chip"><input type="radio" name="type_demande" value="Reprise / refonte d'un site existant"><span><strong>🔧 Reprise / refonte</strong>J'ai un site à moderniser, réparer ou reprendre</span></label>
+            </div>
+            <div id="bloc-reprise" class="hidden">
+              <div class="row">
+                <div class="field"><label for="site_actuel">Adresse du site actuel</label><input type="url" id="site_actuel" name="site_actuel" placeholder="https://www.mon-site.fr"></div>
+                <div class="field"><label for="hebergeur_actuel">Hébergeur / accès</label>
+                  <select id="hebergeur_actuel" name="hebergeur_actuel">
+                    <option>Je ne sais pas</option><option>J'ai les accès (WordPress, Wix…)</option><option>OVH</option><option>Hostinger</option><option>IONOS</option><option>Wix / Jimdo / Squarespace</option><option>Ancien prestataire, plus de contact</option>
+                  </select></div>
+              </div>
+              <span class="legend">Ce qui ne va pas aujourd'hui</span>
+              <div class="chips" data-group="probleme_actuel">
+                <label class="chip"><input type="checkbox" name="probleme_actuel" value="Design dépassé"><span>Design dépassé</span></label>
+                <label class="chip"><input type="checkbox" name="probleme_actuel" value="Pas trouvé sur Google"><span>Pas trouvé sur Google</span></label>
+                <label class="chip"><input type="checkbox" name="probleme_actuel" value="Mal affiché sur mobile"><span>Mal affiché sur mobile</span></label>
+                <label class="chip"><input type="checkbox" name="probleme_actuel" value="Trop lent"><span>Trop lent</span></label>
+                <label class="chip"><input type="checkbox" name="probleme_actuel" value="Site en panne / piraté"><span>Site en panne / piraté</span></label>
+                <label class="chip"><input type="checkbox" name="probleme_actuel" value="Je ne peux pas le modifier"><span>Je ne peux pas le modifier</span></label>
+                <label class="chip"><input type="checkbox" name="probleme_actuel" value="Hébergement trop cher"><span>Hébergement trop cher</span></label>
+              </div>
+            </div>
+          </div>
+
+          <!-- 2 -->
+          <div class="step">
+            <h2><b>2</b> Votre activité</h2>
+            <p class="hint">Choisissez un profil : les pages et options adaptées se cochent automatiquement (modifiables ensuite).</p>
+            <div class="presets" id="presets">
+              <button type="button" data-preset="artisan">🔨 Artisan / BTP</button>
+              <button type="button" data-preset="commerce">🛍️ Commerce / boutique</button>
+              <button type="button" data-preset="ecommerce">🛒 Vente en ligne</button>
+              <button type="button" data-preset="restaurant">🍽️ Restaurant / snack</button>
+              <button type="button" data-preset="beaute">💇 Coiffure / beauté</button>
+              <button type="button" data-preset="services">💼 Services / conseil</button>
+              <button type="button" data-preset="loisirs">🌊 Loisirs / tourisme</button>
+            </div>
+            <div class="row" style="margin-top:1rem">
+              <div class="field"><label for="secteur">Secteur d'activité</label><input type="text" id="secteur" name="secteur" placeholder="ex. plombier, salon de coiffure, boutique de vêtements"></div>
+              <div class="field"><label for="ville">Ville / zone desservie</label><input type="text" id="ville" name="ville" value="Moselle" placeholder="ex. Metz et 30 km autour"></div>
+            </div>
+          </div>
+
+          <!-- 3 -->
+          <div class="step">
+            <h2><b>3</b> Formule et objectifs</h2>
+            <div class="field"><label for="formule">Formule qui vous intéresse</label>
+              <select id="formule" name="formule">
+                <option value="Pack Tout Compris — 1000 €" selected>⭐ Pack Tout Compris — 1000 €</option>
+                <option value="Professionnel — 890 €">Professionnel — 890 € (4 à 6 pages)</option>
+                <option value="Essentiel — 490 €">Essentiel — 490 € (1 page)</option>
+                <option value="Sur mesure — devis">Sur mesure — devis</option>
+                <option value="Je ne sais pas, conseillez-moi">Je ne sais pas, conseillez-moi</option>
+              </select></div>
+            <span class="legend">Vos objectifs</span>
+            <div class="chips">
+              <label class="chip"><input type="checkbox" name="objectifs" value="Être en 1ère page Google" checked><span>Être en 1ère page Google</span></label>
+              <label class="chip"><input type="checkbox" name="objectifs" value="Recevoir des appels et devis" checked><span>Recevoir des appels et devis</span></label>
+              <label class="chip"><input type="checkbox" name="objectifs" value="Vendre en ligne"><span>Vendre en ligne</span></label>
+              <label class="chip"><input type="checkbox" name="objectifs" value="Prise de rendez-vous"><span>Prise de rendez-vous</span></label>
+              <label class="chip"><input type="checkbox" name="objectifs" value="Montrer mes réalisations"><span>Montrer mes réalisations</span></label>
+              <label class="chip"><input type="checkbox" name="objectifs" value="Image professionnelle / confiance" checked><span>Image professionnelle</span></label>
+              <label class="chip"><input type="checkbox" name="objectifs" value="Être visible sur les IA (ChatGPT, Gemini)"><span>Visible sur les IA</span></label>
+            </div>
+            <div class="field"><label for="mots_cles">Mots-clés sur lesquels vous voulez être trouvé</label><input type="text" id="mots_cles" name="mots_cles" placeholder="ex. plombier Metz, dépannage chauffage Moselle"></div>
+          </div>
+
+          <!-- 4 -->
+          <div class="step">
+            <h2><b>4</b> Pages et fonctionnalités</h2>
+            <span class="legend">Pages souhaitées</span>
+            <div class="chips" id="pages">
+              <label class="chip"><input type="checkbox" name="pages" value="Accueil" checked><span>Accueil</span></label>
+              <label class="chip"><input type="checkbox" name="pages" value="Services / prestations" checked><span>Services / prestations</span></label>
+              <label class="chip"><input type="checkbox" name="pages" value="À propos"><span>À propos</span></label>
+              <label class="chip"><input type="checkbox" name="pages" value="Réalisations / galerie"><span>Réalisations / galerie</span></label>
+              <label class="chip"><input type="checkbox" name="pages" value="Tarifs"><span>Tarifs</span></label>
+              <label class="chip"><input type="checkbox" name="pages" value="Avis clients"><span>Avis clients</span></label>
+              <label class="chip"><input type="checkbox" name="pages" value="Menu / carte"><span>Menu / carte</span></label>
+              <label class="chip"><input type="checkbox" name="pages" value="Boutique / catalogue"><span>Boutique / catalogue</span></label>
+              <label class="chip"><input type="checkbox" name="pages" value="Blog / actualités"><span>Blog / actualités</span></label>
+              <label class="chip"><input type="checkbox" name="pages" value="FAQ"><span>FAQ</span></label>
+              <label class="chip"><input type="checkbox" name="pages" value="Contact" checked><span>Contact</span></label>
+            </div>
+            <span class="legend">Fonctionnalités</span>
+            <div class="chips" id="fonctions">
+              <label class="chip"><input type="checkbox" name="fonctions" value="Formulaire de contact" checked><span>Formulaire de contact</span></label>
+              <label class="chip"><input type="checkbox" name="fonctions" value="Bouton appel + WhatsApp" checked><span>Bouton appel + WhatsApp</span></label>
+              <label class="chip"><input type="checkbox" name="fonctions" value="Google Maps" checked><span>Google Maps</span></label>
+              <label class="chip"><input type="checkbox" name="fonctions" value="Fiche Google Business"><span>Fiche Google Business</span></label>
+              <label class="chip"><input type="checkbox" name="fonctions" value="Réservation en ligne"><span>Réservation en ligne</span></label>
+              <label class="chip"><input type="checkbox" name="fonctions" value="Paiement en ligne"><span>Paiement en ligne</span></label>
+              <label class="chip"><input type="checkbox" name="fonctions" value="Avis Google affichés"><span>Avis Google affichés</span></label>
+              <label class="chip"><input type="checkbox" name="fonctions" value="Site multilingue"><span>Multilingue</span></label>
+              <label class="chip"><input type="checkbox" name="fonctions" value="Réseaux sociaux"><span>Réseaux sociaux</span></label>
+              <label class="chip"><input type="checkbox" name="fonctions" value="Agent IA / répondeur vocal"><span>Agent IA / répondeur vocal</span></label>
+            </div>
+          </div>
+
+          <!-- 5 -->
+          <div class="step">
+            <h2><b>5</b> Image et contenus</h2>
+            <div class="row">
+              <div class="field"><label for="logo">Logo</label><select id="logo" name="logo"><option>J'ai déjà un logo</option><option selected>Logo à créer</option><option>Logo à moderniser</option></select></div>
+              <div class="field"><label for="couleurs">Couleurs / style</label><input type="text" id="couleurs" name="couleurs" placeholder="ex. bleu et blanc, moderne, épuré"></div>
+              <div class="field"><label for="textes">Textes du site</label><select id="textes" name="textes"><option selected>À rédiger par AQUA-R-WEB</option><option>Je fournis mes textes</option><option>Reprendre ceux du site actuel</option></select></div>
+              <div class="field"><label for="photos">Photos</label><select id="photos" name="photos"><option selected>J'ai mes photos</option><option>Photos à trouver (banque d'images)</option><option>Mélange des deux</option></select></div>
+              <div class="field"><label for="domaine">Nom de domaine</label><select id="domaine" name="domaine"><option selected>À réserver (inclus)</option><option>J'ai déjà un nom de domaine</option></select></div>
+              <div class="field"><label for="domaine_souhaite">Nom souhaité ou actuel</label><input type="text" id="domaine_souhaite" name="domaine_souhaite" placeholder="ex. plomberie-dupont.fr"></div>
+            </div>
+            <div class="field"><label for="inspirations">Sites qui vous plaisent (facultatif)</label><input type="text" id="inspirations" name="inspirations" placeholder="liens de sites, concurrents…"></div>
+          </div>
+
+          <!-- 6 -->
+          <div class="step">
+            <h2><b>6</b> Délai et budget</h2>
+            <span class="legend">Délai souhaité</span>
+            <div class="chips">
+              <label class="chip"><input type="radio" name="delai" value="Urgent (moins de 2 semaines)"><span>⚡ Urgent &lt; 2 semaines</span></label>
+              <label class="chip"><input type="radio" name="delai" value="Dans le mois" checked><span>Dans le mois</span></label>
+              <label class="chip"><input type="radio" name="delai" value="1 à 3 mois"><span>1 à 3 mois</span></label>
+              <label class="chip"><input type="radio" name="delai" value="Pas pressé"><span>Pas pressé</span></label>
+            </div>
+            <div class="field"><label for="budget">Budget</label>
+              <select id="budget" name="budget"><option>Moins de 500 €</option><option>500 à 900 €</option><option selected>Environ 1000 €</option><option>1000 à 2000 €</option><option>Plus de 2000 €</option><option>À définir ensemble</option></select></div>
+          </div>
+
+          <!-- 7 -->
+          <div class="step">
+            <h2><b>7</b> Vos coordonnées</h2>
+            <div class="row">
+              <div class="field"><label for="nom">Nom et prénom <span class="req">*</span></label><input type="text" id="nom" name="nom" required autocomplete="name"></div>
+              <div class="field"><label for="entreprise">Entreprise</label><input type="text" id="entreprise" name="entreprise" autocomplete="organization"></div>
+              <div class="field"><label for="email">E-mail <span class="req">*</span></label><input type="email" id="email" name="email" required autocomplete="email" inputmode="email"></div>
+              <div class="field"><label for="telephone">Téléphone</label><input type="tel" id="telephone" name="telephone" autocomplete="tel" inputmode="tel"></div>
+            </div>
+            <span class="legend">Comment préférez-vous être recontacté ?</span>
+            <div class="chips">
+              <label class="chip"><input type="radio" name="rappel" value="Par téléphone" checked><span>📞 Téléphone</span></label>
+              <label class="chip"><input type="radio" name="rappel" value="Par WhatsApp"><span>💬 WhatsApp</span></label>
+              <label class="chip"><input type="radio" name="rappel" value="Par e-mail"><span>✉️ E-mail</span></label>
+            </div>
+            <div class="field"><label for="message">Autre chose à nous dire ?</label><textarea id="message" name="message" placeholder="Précisions, questions, idées…"></textarea></div>
+            <label class="consent"><input type="checkbox" name="rgpd" id="rgpd" required><span>J'accepte que mes informations soient utilisées pour traiter ma demande et me recontacter. <a href="/politique-confidentialite/" style="text-decoration:underline">Politique de confidentialité</a> <span class="req">*</span></span></label>
+            <div class="submit-bar">
+              <button type="submit" class="btn btn-primary" id="envoyer">📨 Envoyer ma demande</button>
+              <span style="color:var(--mist);font-size:.9rem">Vous recevez une copie par e-mail immédiatement.</span>
+            </div>
+            <div class="status" id="status" role="status" aria-live="polite"></div>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer><div class="wrap foot"><span>© 2026 AQUA-R-WEB · Service web d'AQUA-R-FLY</span><span><a href="/">Accueil</a> · <a href="/#contact">Contact</a> · <a href="/mentions-legales/">Mentions légales</a> · <a href="/politique-confidentialite/">Confidentialité</a></span></div></footer>
+
+  <script>
+  (function(){
+    var form=document.getElementById('brief'), status=document.getElementById('status'), btn=document.getElementById('envoyer');
+    var reprise=document.getElementById('bloc-reprise');
+    function toggleReprise(){var v=form.querySelector('input[name=type_demande]:checked').value;reprise.classList.toggle('hidden',v.indexOf('Reprise')!==0);}
+    form.querySelectorAll('input[name=type_demande]').forEach(function(r){r.addEventListener('change',toggleReprise);});
+
+    var PRESETS={
+      artisan:{secteur:'Artisan / BTP',pages:['Accueil','Services / prestations','Réalisations / galerie','Avis clients','Contact'],fonctions:['Formulaire de contact','Bouton appel + WhatsApp','Google Maps','Fiche Google Business','Avis Google affichés'],objectifs:['Être en 1ère page Google','Recevoir des appels et devis','Montrer mes réalisations']},
+      commerce:{secteur:'Commerce / boutique',pages:['Accueil','Services / prestations','À propos','Avis clients','Contact'],fonctions:['Formulaire de contact','Bouton appel + WhatsApp','Google Maps','Fiche Google Business','Réseaux sociaux'],objectifs:['Être en 1ère page Google','Image professionnelle / confiance']},
+      ecommerce:{secteur:'Vente en ligne / e-commerce',formule:'Sur mesure — devis',pages:['Accueil','Boutique / catalogue','À propos','FAQ','Contact'],fonctions:['Formulaire de contact','Paiement en ligne','Réseaux sociaux','Bouton appel + WhatsApp'],objectifs:['Vendre en ligne','Être en 1ère page Google','Être visible sur les IA (ChatGPT, Gemini)']},
+      restaurant:{secteur:'Restaurant / snack',pages:['Accueil','Menu / carte','À propos','Avis clients','Contact'],fonctions:['Bouton appel + WhatsApp','Google Maps','Fiche Google Business','Réservation en ligne','Avis Google affichés','Réseaux sociaux'],objectifs:['Être en 1ère page Google','Prise de rendez-vous','Image professionnelle / confiance']},
+      beaute:{secteur:'Coiffure / beauté',pages:['Accueil','Services / prestations','Tarifs','Réalisations / galerie','Avis clients','Contact'],fonctions:['Bouton appel + WhatsApp','Google Maps','Fiche Google Business','Réservation en ligne','Avis Google affichés','Réseaux sociaux'],objectifs:['Être en 1ère page Google','Prise de rendez-vous','Montrer mes réalisations']},
+      services:{secteur:'Services / conseil',pages:['Accueil','Services / prestations','À propos','Tarifs','FAQ','Contact'],fonctions:['Formulaire de contact','Bouton appel + WhatsApp','Fiche Google Business'],objectifs:['Être en 1ère page Google','Recevoir des appels et devis','Image professionnelle / confiance']},
+      loisirs:{secteur:'Loisirs / tourisme',pages:['Accueil','Services / prestations','Tarifs','Réalisations / galerie','Avis clients','FAQ','Contact'],fonctions:['Bouton appel + WhatsApp','Google Maps','Réservation en ligne','Paiement en ligne','Site multilingue','Réseaux sociaux'],objectifs:['Être en 1ère page Google','Prise de rendez-vous','Vendre en ligne']}
+    };
+    function setGroup(name,values){form.querySelectorAll('input[name="'+name+'"]').forEach(function(c){c.checked=values.indexOf(c.value)!==-1;});}
+    document.querySelectorAll('#presets button').forEach(function(b){
+      b.addEventListener('click',function(){
+        var p=PRESETS[b.dataset.preset]; if(!p) return;
+        document.querySelectorAll('#presets button').forEach(function(x){x.classList.remove('on');}); b.classList.add('on');
+        form.secteur.value=p.secteur; setGroup('pages',p.pages); setGroup('fonctions',p.fonctions); setGroup('objectifs',p.objectifs);
+        form.formule.value=p.formule||'Pack Tout Compris — 1000 €';
+      });
+    });
+
+    // pré-remplissage par l'URL : ?formule=pack|pro|essentiel|mesure &type=reprise
+    var q=new URLSearchParams(location.search), map={pack:'Pack Tout Compris — 1000 €',pro:'Professionnel — 890 €',essentiel:'Essentiel — 490 €',mesure:'Sur mesure — devis'};
+    if(map[q.get('formule')]) form.formule.value=map[q.get('formule')];
+    if(q.get('type')==='reprise'){form.querySelector('input[name=type_demande][value^="Reprise"]').checked=true;}
+    toggleReprise();
+
+    function collect(){
+      var d={};
+      new FormData(form).forEach(function(v,k){ if(d[k]===undefined) d[k]=v; else if(Array.isArray(d[k])) d[k].push(v); else d[k]=[d[k],v]; });
+      ['objectifs','pages','fonctions','probleme_actuel'].forEach(function(k){ if(typeof d[k]==='string') d[k]=[d[k]]; });
+      if(d.type_demande && d.type_demande.indexOf('Reprise')!==0){ delete d.site_actuel; delete d.hebergeur_actuel; delete d.probleme_actuel; }
+      return d;
+    }
+    function mailtoLink(d){
+      var lines=[]; Object.keys(d).forEach(function(k){ if(k==='rgpd'||k==='site_web_confirm'||!d[k]) return; lines.push(k.replace(/_/g,' ')+' : '+(Array.isArray(d[k])?d[k].join(', '):d[k])); });
+      return 'mailto:aquaweb57@gmail.com?subject='+encodeURIComponent('Demande de projet web — '+(d.entreprise||d.nom||''))+'&body='+encodeURIComponent(lines.join('\n'));
+    }
+    function show(cls,html){status.className='status '+cls;status.innerHTML=html;status.scrollIntoView({behavior:'smooth',block:'center'});}
+
+    form.addEventListener('submit',function(e){
+      e.preventDefault();
+      if(!form.nom.value.trim()||!form.email.checkValidity()||!form.email.value){ show('err','Merci d\'indiquer votre <strong>nom</strong> et une <strong>adresse e-mail valide</strong>.'); return; }
+      if(!form.rgpd.checked){ show('err','Merci de cocher la case de consentement pour envoyer votre demande.'); return; }
+      var d=collect(); btn.disabled=true; btn.textContent='Envoi en cours…';
+      fetch('/api/demande',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(d)})
+        .then(function(r){return r.json().then(function(j){return {ok:r.ok&&j.ok,j:j};});})
+        .then(function(res){
+          if(!res.ok) throw new Error(res.j.error||'Erreur');
+          form.reset(); toggleReprise();
+          show('ok','✅ <strong>Demande envoyée !</strong> '+(res.j.confirmation?'Un récapitulatif vient de vous être envoyé par e-mail. ':'')+'Nous revenons vers vous sous 24h. Besoin d\'aller plus vite ? <a href="tel:0787202594" style="text-decoration:underline">07 87 20 25 94</a>');
+        })
+        .catch(function(){
+          show('err','L\'envoi automatique n\'a pas fonctionné. <a href="'+mailtoLink(d)+'" style="text-decoration:underline;font-weight:700">Cliquez ici pour envoyer votre demande pré-remplie par e-mail</a>, ou appelez le 07 87 20 25 94.');
+        })
+        .finally(function(){btn.disabled=false;btn.textContent='📨 Envoyer ma demande';});
+    });
+  })();
+  </script>
+  <script src="/cookie-consent.js" defer></script>
+</body>
+</html>
