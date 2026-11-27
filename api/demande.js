@@ -73,8 +73,8 @@ function layout(preheader, title, introHtml, bodyHtml) {
   <div style="display:none;max-height:0;overflow:hidden;opacity:0">${esc(preheader)}</div>
   <div style="padding:24px 12px;font-family:Arial,Helvetica,sans-serif">
   <div style="max-width:640px;margin:auto;background:#ffffff;border-radius:16px;overflow:hidden;border:1px solid #d6eee4">
-    <div style="background:#04140F;padding:18px 24px;font-size:20px;font-weight:800;color:#10E0A0">AQUA-R-<span style="color:#ffffff">WEB</span>
-      <span style="display:block;font-size:12px;font-weight:400;color:#9cccb9;margin-top:2px">Création de sites internet en Moselle</span></div>
+    <div style="background:#ffffff;padding:16px 24px;border-bottom:3px solid #10E0A0;text-align:center">
+      <a href="${SITE}"><img src="${SITE}/logo-aqua-r-web-complet-blanc.png" width="280" alt="AQUA-R-WEB – Création Web, SEO local, IA générative" style="display:inline-block;max-width:100%;height:auto;border:0"></a></div>
     <div style="padding:24px">
       <h1 style="font-size:20px;line-height:1.3;color:#0b2a20;margin:0 0 12px">${title}</h1>
       <div style="color:#33574a;font-size:15px;line-height:1.6;margin:0 0 20px">${introHtml}</div>
