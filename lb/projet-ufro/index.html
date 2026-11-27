@@ -70,7 +70,7 @@
     <div class="wrap nav">
       <a class="brand" href="/lb/" aria-label="AQUA-R-WEB, Startsäit"><img src="../../logo-aqua-r-web-256.png" width="256" height="256" alt=""><span>AQUA-R-<em>WEB</em></span></a>
       <nav class="nav-links" aria-label="Haaptnavigatioun"><a href="/lb/#services">Servicer</a><a href="/lb/#tarifs">Präisser</a><a href="/lb/komplett-pak-websait/">Pak 1000 €</a><a href="/lb/#faq">FAQ</a></nav>
-      <a class="btn btn-primary" href="tel:0787202594">📞 Uruffen</a>
+      <a class="btn btn-primary" href="mailto:aquaweb57@gmail.com">✉️ Schreift eis</a>
     </div>
   </header>
 
@@ -301,10 +301,10 @@
         .then(function(res){
           if(!res.ok) throw new Error(res.j.error||'Erreur');
           form.reset(); toggleReprise();
-          show('ok','✅ <strong>Ufro geschéckt!</strong> '+(res.j.confirmation?'E Resumé ass Iech elo per E-Mail geschéckt ginn. ':'')+'Mir mellen eis bannent 24 Stonnen. Et muss méi séier goen? <a href="tel:0787202594" style="text-decoration:underline">+33 7 87 20 25 94</a>');
+          show('ok','✅ <strong>Ufro geschéckt!</strong> '+(res.j.confirmation?'E Resumé ass Iech elo per E-Mail geschéckt ginn. ':'')+'Mir mellen eis bannent 24 Stonnen mat Ärem Devis.');
         })
         .catch(function(){
-          show('err','Den automateschen Versand huet net funktionéiert. <a href="'+mailtoLink(d)+'" style="text-decoration:underline;font-weight:700">Klickt hei, fir Är virausgefëllt Ufro per E-Mail ze schécken</a>, oder rufft +33 7 87 20 25 94 un.');
+          show('err','Den automateschen Versand huet net funktionéiert. <a href="'+mailtoLink(d)+'" style="text-decoration:underline;font-weight:700">Klickt hei, fir Är virausgefëllt Ufro per E-Mail ze schécken</a>, oder schreift eis op aquaweb57@gmail.com.');
         })
         .finally(function(){btn.disabled=false;btn.textContent='📨 Meng Ufro schécken';});
     });

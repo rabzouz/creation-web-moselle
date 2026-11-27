@@ -70,7 +70,7 @@
     <div class="wrap nav">
       <a class="brand" href="/" aria-label="AQUA-R-WEB, accueil"><img src="../logo-aqua-r-web-256.png" width="256" height="256" alt=""><span>AQUA-R-<em>WEB</em></span></a>
       <nav class="nav-links" aria-label="Navigation principale"><a href="/#services">Services</a><a href="/#tarifs">Tarifs</a><a href="/pack-site-internet-tout-compris/">Pack 1000 €</a><a href="/#faq">FAQ</a></nav>
-      <a class="btn btn-primary" href="tel:0787202594">📞 Appeler</a>
+      <a class="btn btn-primary" href="mailto:aquaweb57@gmail.com">✉️ Nous écrire</a>
     </div>
   </header>
 
@@ -301,10 +301,10 @@
         .then(function(res){
           if(!res.ok) throw new Error(res.j.error||'Erreur');
           form.reset(); toggleReprise();
-          show('ok','✅ <strong>Demande envoyée !</strong> '+(res.j.confirmation?'Un récapitulatif vient de vous être envoyé par e-mail. ':'')+'Nous revenons vers vous sous 24h. Besoin d\'aller plus vite ? <a href="tel:0787202594" style="text-decoration:underline">07 87 20 25 94</a>');
+          show('ok','✅ <strong>Demande envoyée !</strong> '+(res.j.confirmation?'Un récapitulatif vient de vous être envoyé par e-mail. ':'')+'Nous revenons vers vous sous 24h avec votre devis.');
         })
         .catch(function(){
-          show('err','L\'envoi automatique n\'a pas fonctionné. <a href="'+mailtoLink(d)+'" style="text-decoration:underline;font-weight:700">Cliquez ici pour envoyer votre demande pré-remplie par e-mail</a>, ou appelez le 07 87 20 25 94.');
+          show('err','L\'envoi automatique n\'a pas fonctionné. <a href="'+mailtoLink(d)+'" style="text-decoration:underline;font-weight:700">Cliquez ici pour envoyer votre demande pré-remplie par e-mail</a>, ou écrivez-nous à aquaweb57@gmail.com.');
         })
         .finally(function(){btn.disabled=false;btn.textContent='📨 Envoyer ma demande';});
     });
